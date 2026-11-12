@@ -1,0 +1,1246 @@
+{
+  "users": [
+    {
+      "id": "usr_super_admin",
+      "name": "SKM Admin (Principal & Secretary)",
+      "email": "admin@skmhighschool.in",
+      "password_hash": "$2b$12$.h5nLfwnyQ1xYyypHqcgFuI9cMNXZxt3ahDGxDwvt4VdRRAYVzRw2",
+      "role": "super_admin",
+      "is_active": true,
+      "created_at": "2026-11-09T04:07:13.969Z",
+      "last_login_at": "2026-11-12T11:50:18.762Z"
+    },
+    {
+      "id": "usr_content_admin",
+      "name": "Academic Content Manager",
+      "email": "staff@skmhighschool.in",
+      "password_hash": "$2b$10$VqXxELUqCUm92XSLWhz7feMhzlAwQ.M0qbO2r6AzEp7lVjon2aSA2",
+      "role": "content_admin",
+      "is_active": true,
+      "created_at": "2026-11-09T04:07:13.971Z"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann_1794221063919_pjgl",
+      "title": "website-testing",
+      "summary": "this is demo announcement to website testing",
+      "full_content": "this is demo announcement to website testing",
+      "category": "Admissions",
+      "ref_no": "SKM/CIR/2026/434",
+      "attachment_name": "",
+      "attachment_url": "",
+      "file_size": "1.2 MB",
+      "is_urgent": true,
+      "is_pinned": false,
+      "status": "published",
+      "published_at": "2026-11-09",
+      "author_name": "SKM Admin (Principal & Secretary)",
+      "created_at": "2026-11-09T10:44:23.922Z",
+      "updated_at": "2026-11-09T10:44:23.922Z"
+    },
+    {
+      "id": "n1",
+      "title": "Admissions Open for Academic Year 2026–2027 (Std 8th to 12th Science, General & Vocational)",
+      "summary": "Online registration and offline prospectus distribution for Secondary and Higher Secondary sections are now active. Merit-based counseling begins shortly.",
+      "full_content": "Sarvoday Kelavani Mandal announces the commencement of admission formalities for the Academic Session 2026-2027 across Class 8 to Class 12 (Higher Secondary Science Group A & B, Higher Secondary General Stream, and Technical Vocational wings). Application forms can be submitted online through the admissions inquiry form or collected directly from the school administrative office between 8:00 AM and 1:30 PM.",
+      "category": "Admissions",
+      "ref_no": "SKM/ADM/2026-27/01",
+      "attachment_name": "SKM_Admission_Prospectus_2026-27.pdf",
+      "attachment_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_size": "1.4 MB PDF",
+      "is_urgent": true,
+      "is_pinned": true,
+      "status": "published",
+      "published_at": "August 15, 2026",
+      "author_name": "Principal Office",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "n2",
+      "title": "GSEB Board Examination Assessment Center Schedule & Guidelines",
+      "summary": "Official GSEB notification regarding seat allotments, hall ticket verification, and timetable for upcoming board assessments.",
+      "full_content": "All candidates appearing for the Gujarat Secondary and Higher Secondary Education Board (GSEB) examinations at the SKM High School Center (School Index 02.045 / 52.012) are advised to verify hall tickets and review the authorized seating layout and laboratory examination schedule. Identity cards and authorized stationery are strictly mandatory.",
+      "category": "Exams",
+      "ref_no": "SKM/EXAM/GSEB-2026/08",
+      "attachment_name": "GSEB_Board_Exam_Guidelines_2026.pdf",
+      "attachment_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_size": "820 KB PDF",
+      "is_urgent": true,
+      "is_pinned": false,
+      "status": "published",
+      "published_at": "August 10, 2026",
+      "author_name": "Principal Office",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "n3",
+      "title": "Dawoodi Bohra Welfare Trust & R.K. Palasara Pariwar Merit Scholarship Announcement",
+      "summary": "Applications invited for annual meritorious student scholarships, book bank access, and tuition waivers for deserving students.",
+      "full_content": "Sarvoday Kelavani Mandal in conjunction with generous patrons from the Dawoodi Bohra Welfare Trust and R.K. Palasara Pariwar invites scholarship applications from high-achieving and economically deserving scholars enrolled in Secondary and Higher Secondary streams. Download the criteria sheet to apply before the due date.",
+      "category": "Scholarships",
+      "ref_no": "SKM/SCHOL/2026/04",
+      "attachment_name": "SKM_Merit_Scholarship_Application.pdf",
+      "attachment_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_size": "540 KB PDF",
+      "is_urgent": false,
+      "is_pinned": false,
+      "status": "published",
+      "published_at": "August 02, 2026",
+      "author_name": "Principal Office",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "n4",
+      "title": "Annual Inter-School Science Fair & Innovation Model Exhibition",
+      "summary": "Students from Std 8th to 12th will showcase live physics mechanics, robotics, solar models, and chemistry demonstrations.",
+      "full_content": "The Annual Banaskantha District Inter-School Science & Mathematics Fair will be hosted at the SKM Science Laboratory Complex and A.N. Musa Computer Centre. Parents, educators, and alumni are warmly invited to witness innovative student projects and working models.",
+      "category": "Events",
+      "ref_no": "SKM/EVENT/SCI-2026/12",
+      "attachment_name": "Science_Fair_Schedule_2026.pdf",
+      "attachment_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_size": "1.1 MB PDF",
+      "is_urgent": false,
+      "is_pinned": false,
+      "status": "published",
+      "published_at": "July 28, 2026",
+      "author_name": "Principal Office",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "n5",
+      "title": "GSEB Secondary & Higher Secondary Board Results 2025–26: 98.4% Historic Pass Rate",
+      "summary": "Heartiest congratulations to our HSC Science & General stream toppers for achieving outstanding state and district rankings.",
+      "full_content": "SKM High School students have once again brought immense glory to Kanodar by securing an overall 98.4% pass percentage in the GSEB Board Exams. 18 students achieved over 95th percentile, with top honors in Physics, Mathematics, and Accountancy.",
+      "category": "Circular",
+      "ref_no": "SKM/CIR/RES-2026/02",
+      "attachment_name": "Board_Merit_List_Toppers_2026.pdf",
+      "attachment_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_size": "650 KB PDF",
+      "is_urgent": false,
+      "is_pinned": false,
+      "status": "published",
+      "published_at": "July 15, 2026",
+      "author_name": "Principal Office",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "n6",
+      "title": "Diwali & Mid-Term Vacation Academic Calendar 2026–27",
+      "summary": "Official calendar covering terminal examinations, parent-teacher conferences, and holiday breaks.",
+      "full_content": "The approved academic calendar for the current academic session is hereby published. It outlines unit test dates, mid-term examinations, sports week, and scheduled vacation breaks in compliance with the Gujarat Education Department directives.",
+      "category": "Holidays",
+      "ref_no": "SKM/CAL/VAC-2026/01",
+      "attachment_name": "SKM_Academic_Calendar_2026-27.pdf",
+      "attachment_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_size": "430 KB PDF",
+      "is_urgent": false,
+      "is_pinned": false,
+      "status": "published",
+      "published_at": "July 05, 2026",
+      "author_name": "Principal Office",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_1",
+      "title": "70th Institutional Foundation Day & Sarvoday Sneh Milan",
+      "description": "Annual gathering celebrating 70 glorious years since May 28, 1956 with patron families, alumni scholars, and student science exhibitions.",
+      "event_date": "2026-05-28",
+      "start_time": "09:00 AM",
+      "end_time": "01:30 PM",
+      "location": "Late Mamjibhai Mukhi Memorial Auditorium",
+      "category": "Institutional",
+      "cover_image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1000&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "evt_2",
+      "title": "North Gujarat Inter-School STEM & Robotics Fair",
+      "description": "Hands-on project showcases from Class 9-12 Science students including smart agricultural sensors and physics models.",
+      "event_date": "2026-09-15",
+      "start_time": "10:00 AM",
+      "end_time": "04:00 PM",
+      "location": "A.N. Musa Computer Centre & Physics Labs",
+      "category": "Academic",
+      "cover_image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=1000&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "evt_3",
+      "title": "Khel Mahakumbh District Athletic Meet 2026",
+      "description": "District level track and field, volleyball tournaments and kabaddi matches hosted on the SKM campus athletic grounds.",
+      "event_date": "2026-10-10",
+      "start_time": "08:00 AM",
+      "end_time": "05:00 PM",
+      "location": "SKM Sports Complex & Pavilion",
+      "category": "Sports",
+      "cover_image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1000&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z",
+      "updated_at": "2026-11-09T04:07:13.971Z"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "g1",
+      "title": "Physics & Science Laboratory Practical Session",
+      "caption": "Students conducting electricity and mechanics practicals on calibrated physics benches in the Science complex.",
+      "category": "labs",
+      "image_url": "/images/skm_physics_lab_1787194159238.jpg",
+      "sort_order": 1,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "g2",
+      "title": "A.N. Musa Modern Computer Centre Workstations",
+      "caption": "Interactive computer science lab equipped with networked PCs and modern programming suites.",
+      "category": "labs",
+      "image_url": "/images/skm_computer_lab_1787194177225.jpg",
+      "sort_order": 2,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "g3",
+      "title": "SKM High School Historic Main Building & Verandahs",
+      "caption": "Front facade of SKM High School established in 1956 by Sarvoday Kelavani Mandal, Kanodar.",
+      "category": "campus",
+      "image_url": "/images/skm_building_real_1787194137584.jpg",
+      "sort_order": 3,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "g4",
+      "title": "Adarsh Public & School Central Library Reading Hall",
+      "caption": "Spacious reading hall and cataloged book almirahs providing literature and competitive exam resources.",
+      "category": "campus",
+      "image_url": "/images/skm_school_library_1787194194176.jpg",
+      "sort_order": 4,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "g5",
+      "title": "School Sports Ground & Volleyball Arena",
+      "caption": "Expansive open playground surrounded by lush green trees for daily physical training and sports matches.",
+      "category": "sports",
+      "image_url": "/images/skm_sports_ground_1787194210261.jpg",
+      "sort_order": 5,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "g6",
+      "title": "Merit Award Ceremony & Board Toppers Felicitation",
+      "caption": "Sarvoday Kelavani Mandal trustees awarding gold medals and scholarships to HSC toppers.",
+      "category": "cultural",
+      "image_url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80",
+      "sort_order": 6,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc_1",
+      "title": "Academic Prospectus & Admission Guidelines 2026–27",
+      "category": "Prospectus",
+      "description": "Complete institutional prospectus including stream subjects, eligibility rules, fee concessions, and scholarship criteria.",
+      "file_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_name": "SKM_Prospectus_2026-27.pdf",
+      "file_size": "2.4 MB",
+      "download_count": 142,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "doc_2",
+      "title": "GSEB Secondary & Higher Secondary Annual Academic Calendar",
+      "category": "Timetable",
+      "description": "Official schedule of term dates, internal unit evaluations, semester preliminary exams, and vacation periods.",
+      "file_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_name": "GSEB_Academic_Calendar_2026.pdf",
+      "file_size": "1.1 MB",
+      "download_count": 320,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "doc_3",
+      "title": "Higher Secondary Science Stream Syllabus & Lab Manual Guide",
+      "category": "Syllabus",
+      "description": "Physics, Chemistry, Biology & Mathematics curriculum breakdown with practical laboratory experiments list.",
+      "file_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "file_name": "Science_Stream_Lab_Manual_2026.pdf",
+      "file_size": "3.8 MB",
+      "download_count": 215,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    }
+  ],
+  "staff": [
+    {
+      "id": "t1",
+      "name": "Dr. Arvindkumar K. Patel",
+      "role": "Principal & Head of Institution",
+      "designation": "Principal",
+      "department": "administration",
+      "qualifications": "Ph.D. in Educational Leadership, M.Sc. (Physics), M.Ed.",
+      "experience_years": "28+ Years",
+      "subjects": [
+        "Institutional Administration",
+        "Higher Secondary Physics Guidance",
+        "Board Exam Co-ordination"
+      ],
+      "achievements": "State Best Principal Award Nominee, GSEB District Center Superintendent (15+ Years)",
+      "email": "principal@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": true,
+      "sort_order": 1,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t2",
+      "name": "Prof. Bharatbhai M. Solanki",
+      "role": "Vice Principal & HOD - Science Stream",
+      "designation": "Senior Lecturer in Physics",
+      "department": "science",
+      "qualifications": "M.Sc. (Physics with Gold Medal), B.Ed.",
+      "experience_years": "24+ Years",
+      "subjects": [
+        "HSC Physics (Group A & B)",
+        "GUJCET & JEE Foundations",
+        "Practical Lab Demonstrations"
+      ],
+      "achievements": "Author of 3 State Board Practical Reference Guides, 100% HSC Board Distinction Record",
+      "email": "physics.hod@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": true,
+      "sort_order": 2,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t3",
+      "name": "Smt. Ramilaben S. Prajapati",
+      "role": "Senior Lecturer & Lab In-charge",
+      "designation": "Lecturer in Chemistry",
+      "department": "science",
+      "qualifications": "M.Sc. (Organic Chemistry), B.Ed.",
+      "experience_years": "19+ Years",
+      "subjects": [
+        "HSC Chemistry",
+        "Inorganic & Organic Practical Labs",
+        "NEET Chemistry Prep"
+      ],
+      "achievements": "Guided 8 District Science Fair 1st Prize winning student models",
+      "email": "chemistry@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": false,
+      "sort_order": 3,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t4",
+      "name": "Shri Manojkumar D. Joshi",
+      "role": "Senior Lecturer in Biology",
+      "designation": "Lecturer in Life Sciences",
+      "department": "science",
+      "qualifications": "M.Sc. (Botany & Zoology), B.Ed., M.Phil.",
+      "experience_years": "21+ Years",
+      "subjects": [
+        "HSC Biology (Group B)",
+        "Human Physiology & Genetics",
+        "NEET Mentorship"
+      ],
+      "achievements": "State Botanical Society Fellow, Mentored 40+ MBBS Selected Students",
+      "email": "biology@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": false,
+      "sort_order": 4,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t5",
+      "name": "Shri Hareshbhai N. Chaudhary",
+      "role": "Senior Lecturer in Mathematics",
+      "designation": "Lecturer in Advanced Mathematics",
+      "department": "science",
+      "qualifications": "M.Sc. (Applied Mathematics), B.Ed.",
+      "experience_years": "18+ Years",
+      "subjects": [
+        "HSC Mathematics (Group A)",
+        "Calculus & Vectors",
+        "JEE Main Math Specialist"
+      ],
+      "achievements": "Ranked Top Mathematics Faculty in North Gujarat GSEB District Zone",
+      "email": "maths@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": false,
+      "sort_order": 5,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t6",
+      "name": "Shri Dilipkumar R. Shah",
+      "role": "HOD - Commerce & General Stream",
+      "designation": "Senior Lecturer in Accountancy",
+      "department": "commerce",
+      "qualifications": "M.Com. (Advanced Accountancy), B.Ed., C.A. (Inter)",
+      "experience_years": "22+ Years",
+      "subjects": [
+        "Elements of Accounts",
+        "Business Administration (B.A.)",
+        "CA Foundation Orientation"
+      ],
+      "achievements": "15+ Students scored 100/100 in GSEB HSC Board Accountancy",
+      "email": "commerce@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": true,
+      "sort_order": 6,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t7",
+      "name": "Smt. Farhanabanu I. Mansuri",
+      "role": "Senior Lecturer in Economics & Statistics",
+      "designation": "Lecturer in Economics",
+      "department": "commerce",
+      "qualifications": "M.A. (Economics), M.Ed.",
+      "experience_years": "16+ Years",
+      "subjects": [
+        "Indian Economics",
+        "Business Statistics",
+        "Commercial Communication"
+      ],
+      "achievements": "Keynote Speaker at North Gujarat Commerce Teachers Forum",
+      "email": "economics@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": false,
+      "sort_order": 7,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t8",
+      "name": "Shri Pravinbhai G. Parmar",
+      "role": "HOD - Secondary School Section",
+      "designation": "Senior Secondary Master",
+      "department": "secondary",
+      "qualifications": "M.A. (Gujarati Literature), B.Ed.",
+      "experience_years": "25+ Years",
+      "subjects": [
+        "Secondary Gujarati (First Language)",
+        "Sanskrit Grammar",
+        "Cultural Activities"
+      ],
+      "achievements": "District Best Teacher Awardee, Chief Cultural Director for Sarvoday Mandal",
+      "email": "secondary@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": true,
+      "sort_order": 8,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t9",
+      "name": "Shri Altafhussain K. Qureshi",
+      "role": "Director - A.N. Musa Computer Centre",
+      "designation": "Head of IT & Digital Pedagogy",
+      "department": "vocational",
+      "qualifications": "M.C.A., B.Sc. (Computer Science), PGDCA",
+      "experience_years": "15+ Years",
+      "subjects": [
+        "Computer Science (Std 9–12)",
+        "Python & C Programming",
+        "LAN Networking & Digital Skills"
+      ],
+      "achievements": "Established campus-wide optical fiber network & 80+ terminal lab setup",
+      "email": "itlab@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": false,
+      "sort_order": 9,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.971Z"
+    },
+    {
+      "id": "t10",
+      "name": "Smt. Jayshreeben K. Vaghela",
+      "role": "In-charge - Home Science & Girls Vocational Wing",
+      "designation": "Instructor in Vocational Arts",
+      "department": "vocational",
+      "qualifications": "M.Sc. (Home Science), B.Ed.",
+      "experience_years": "17+ Years",
+      "subjects": [
+        "Home Science",
+        "Nutritional Science & Dietetics",
+        "Textile Arts & Entrepreneurship"
+      ],
+      "achievements": "Mentored 500+ female students in vocational self-reliance and entrepreneurship",
+      "email": "homescience@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": false,
+      "sort_order": 10,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "t11",
+      "name": "Shri Jagdishbhai M. Desai",
+      "role": "Physical Training Instructor & Scout Master",
+      "designation": "Director of Physical Education",
+      "department": "sports",
+      "qualifications": "M.P.Ed. (Physical Education), Himalaya Wood Badge (Bharat Scouts)",
+      "experience_years": "20+ Years",
+      "subjects": [
+        "Physical Training & Yoga",
+        "Athletics & Volleyball Coaching",
+        "Bharat Scouts & Guides"
+      ],
+      "achievements": "Coached Banaskantha District Champion Volleyball & Kho-Kho teams for 7 consecutive years",
+      "email": "sports@skmkanodar.org",
+      "photo_url": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "is_lead": false,
+      "sort_order": 11,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "a2",
+      "title": "100% Result in GSEB S.S.C. Class 10th Board Examination",
+      "year": "2025–2026",
+      "category": "board",
+      "awardee": "Secondary Section Batch of 2026",
+      "rank_or_percentile": "100% Pass Percentage",
+      "description": "Out of 280 registered candidates, 100% passed with 62 students achieving A1 & A2 distinction grades.",
+      "badge": "100% Pass Rate",
+      "metric": "62 A1/A2 Grades",
+      "image_url": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "a3",
+      "title": "State Science Fair 1st Prize: Smart Solar Irrigation & AI IoT Model",
+      "year": "2025",
+      "category": "science",
+      "awardee": "SKM Innovation & Robotics Club",
+      "rank_or_percentile": "State 1st Prize Winner",
+      "description": "Developed an automated solar-powered soil moisture and drip irrigation device displayed at the Gujarat State Council of Educational Research.",
+      "badge": "State Innovation Award",
+      "metric": "1st in Gujarat",
+      "image_url": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "a4",
+      "title": "Bharat Scouts & Guides: Rashtrapati & Rajya Puraskar Honors",
+      "year": "2024–2025",
+      "category": "scouts",
+      "awardee": "14 SKM Scout & Guide Cadets",
+      "rank_or_percentile": "Governor Award Felicitation",
+      "description": "Honored by the Honorable Governor of Gujarat at Raj Bhavan for exemplary national discipline, disaster rescue drills, and community service.",
+      "badge": "Rajya Puraskar",
+      "metric": "14 Cadets Honored",
+      "image_url": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "a5",
+      "title": "Banaskantha District Inter-School Volleyball Championship Gold",
+      "year": "2025",
+      "category": "sports",
+      "awardee": "SKM High School Senior Volleyball Team",
+      "rank_or_percentile": "District Champions (Gold)",
+      "description": "Defeated 32 participating district teams in undefeated straight sets to lift the prestigious District Collector Rolling Trophy.",
+      "badge": "District Champions",
+      "metric": "Undefeated Gold",
+      "image_url": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "a6",
+      "title": "Alumni Excellence: 150+ Doctors, 400+ Engineers & Civil Servants",
+      "year": "1956–2026",
+      "category": "alumni",
+      "awardee": "SKM Global Alumni Fraternity",
+      "rank_or_percentile": "Global Impact Legacy",
+      "description": "Proud alumni contributing globally across USA, UK, Gulf, and across India as renowned surgeons, AI researchers, administrators, and philanthropists.",
+      "badge": "Alumni Distinction",
+      "metric": "25,000+ Worldwide",
+      "image_url": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&auto=format&fit=crop&q=80",
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    }
+  ],
+  "admissions": [
+    {
+      "id": "enq_1",
+      "student_name": "Farhan A. Patel",
+      "parent_name": "Anwarbhai Patel",
+      "applied_class": "Class 11",
+      "stream": "Science (Group A - Maths)",
+      "mobile_number": "+91 98251 44520",
+      "email": "anwar.patel@gmail.com",
+      "previous_school": "Kanodar Primary English Medium School",
+      "message": "Student scored 92% in Class 10 Board exams and wants to prepare for JEE/GUJCET under SKM guidance.",
+      "status": "under_review",
+      "admin_notes": "Eligible for Dawoodi Bohra Welfare Trust Science Merit fee waiver.",
+      "created_at": "2026-11-07T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "enq_2",
+      "student_name": "Ayesha M. Memon",
+      "parent_name": "Mohammad Memon",
+      "applied_class": "Class 11",
+      "stream": "Commerce (General Stream)",
+      "mobile_number": "+91 94280 77310",
+      "email": "m.memon@kanodar.in",
+      "previous_school": "Palanpur High School",
+      "message": "Inquiring about computer application subjects, English spoken batches, and library study facilities.",
+      "status": "contacted",
+      "admin_notes": "Spoke with parent on phone. Invited to campus on Saturday.",
+      "created_at": "2026-11-04T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    }
+  ],
+  "programs": [
+    {
+      "id": "secondary",
+      "title": "Secondary School Section",
+      "subtitle": "Standards 8th, 9th & 10th (S.S.C.)",
+      "badge": "Foundation & Excellence",
+      "grades": "Std 8 to 10",
+      "icon": "BookOpen",
+      "description": "A comprehensive curriculum designed to develop deep conceptual understanding, strong analytical thinking, ethical values, and multilingual fluency in Gujarati, English, and Hindi.",
+      "subjects": [
+        "Mathematics & Logical Reasoning",
+        "Science & Technology",
+        "Social Studies & Civics",
+        "Gujarati (First/Second Language)",
+        "English Language & Literature",
+        "Hindi & Sanskrit Foundations",
+        "Computer Literacy & Environmental Studies",
+        "Physical Education & Yoga"
+      ],
+      "key_features": [
+        "100% Board preparation with regular unit tests and mock exams.",
+        "Specialized remedial sessions for slow learners and enrichment for high achievers.",
+        "Interactive science lab practicals starting from Std 8th.",
+        "Active participation in Scout & Guide and inter-school competitions."
+      ],
+      "career_paths": [
+        "Higher Secondary Science (Group A/B)",
+        "Commerce & Economics",
+        "Arts & Humanities",
+        "Diploma Engineering / Polytechnic"
+      ],
+      "syllabus_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "sort_order": 1,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "science",
+      "title": "Higher Secondary Science Stream",
+      "subtitle": "Standards 11th & 12th (H.S.C. Science)",
+      "badge": "Premium STEM Stream",
+      "grades": "Std 11 & 12",
+      "icon": "Atom",
+      "description": "An intensive, experiment-driven pre-university science track with specialized Group A (Engineering / Mathematics) and Group B (Medical / Biology) preparing students for competitive entrance exams.",
+      "subjects": [
+        "Advanced Physics (Theory + Lab)",
+        "Inorganic, Organic & Physical Chemistry (Lab)",
+        "Biology / Life Sciences (Group B)",
+        "Higher Mathematics (Group A)",
+        "English Higher Level",
+        "Computer Science & Informatics",
+        "GUJCET, NEET & JEE Foundation Coaching"
+      ],
+      "key_features": [
+        "Fully equipped Physics, Chemistry, and Biology labs with individual workstation kits.",
+        "Experienced senior postgraduate faculty with decades of proven board results.",
+        "Integrated problem-solving modules for GUJCET, JEE Main, and NEET-UG.",
+        "Regular guest lectures by medical doctors, research scientists, and IIT/NIT alumni."
+      ],
+      "career_paths": [
+        "Medicine (MBBS, BDS, BHMS, BAMS)",
+        "Engineering (CSE, AI/ML, Mechanical, Civil)",
+        "Pharmacy & Biotechnology",
+        "Pure Research & Data Science"
+      ],
+      "syllabus_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "sort_order": 2,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "general-vocational",
+      "title": "General, Commerce & Vocational Stream",
+      "subtitle": "Standards 11th & 12th (H.S.C. General)",
+      "badge": "Practical Life Skills",
+      "grades": "Std 11 & 12",
+      "icon": "Briefcase",
+      "description": "A dynamic stream combining rigorous commercial and humanities knowledge with real-world practical vocational training in Home Science for girls and Electrical/Technical workshops for boys.",
+      "subjects": [
+        "Accountancy & Book-Keeping",
+        "Economics & Financial Literacy",
+        "Organization of Commerce & Management",
+        "Statistics & Commercial Math",
+        "Home Science (Food, Nutrition, Child Care & Textiles)",
+        "Electrical Technology & Electronics Workshop",
+        "English & Gujarati Literature"
+      ],
+      "key_features": [
+        "Home Science Lab practicals for nutrition, culinary science, interior planning, and entrepreneurship.",
+        "Hands-on Electrical Workshop where boys learn circuitry, domestic appliances repair, and wiring standards.",
+        "Stock market fundamentals, accounting software exposure (Tally/Excel), and business planning.",
+        "Strong track record in university commerce degrees and self-employment ventures."
+      ],
+      "career_paths": [
+        "Chartered Accountancy (CA / CS / CMA)",
+        "Business Administration (BBA / MBA)",
+        "Banking & Civil Services (UPSC/GPSC)",
+        "Interior Design, Nutrition & Technical Entrepreneurship"
+      ],
+      "syllabus_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "sort_order": 3,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "cocurricular",
+      "title": "Co-Curricular & Leadership Wings",
+      "subtitle": "Character Building, NSS & Bharat Scouts",
+      "badge": "Holistic Development",
+      "grades": "All Grades",
+      "icon": "Users",
+      "description": "Beyond textbook learning, SKM nurtures disciplined leaders through active Bharat Scouts and Guides, National Service Scheme (NSS), sports championships, and cultural arts.",
+      "subjects": [
+        "Bharat Scouts & Guides Troop",
+        "National Service Scheme (NSS) Community Camps",
+        "Elocution, Debate & Quiz Society",
+        "Annual District Sports & Athletics Meet",
+        "Eco-Club & Tree Plantation Mission",
+        "Disaster Management & First-Aid Training"
+      ],
+      "key_features": [
+        "Governor Award winning Scout & Guide commanders from SKM High School.",
+        "Annual rural immersion camps promoting hygiene, literacy, and environmental care.",
+        "Inter-house sports tournaments in Cricket, Volleyball, Badminton, and Kabaddi.",
+        "Cultural celebrations including Republic Day, Independence Day, and Annual Prize Day."
+      ],
+      "career_paths": [
+        "Defense & Police Services",
+        "Public Administration",
+        "Sports Coaching",
+        "Community Leadership"
+      ],
+      "syllabus_url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "sort_order": 4,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    }
+  ],
+  "facilities": [
+    {
+      "id": "computer-lab",
+      "title": "A.N. Musa Modern Computer Centre",
+      "subtitle": "High-Speed LAN & Digital Literacy Hub",
+      "tag": "Digital Learning",
+      "stats": "80+ Workstations | Gigabit Optical Fiber",
+      "description": "Established with the support of community patrons, the A.N. Musa Computer Centre is equipped with modern high-performance desktop computers, uninterrupted power backup, high-speed fiber broadband, and interactive presentation screens for digital learning and coding.",
+      "features": [
+        "Dedicated LAN network connecting all systems for collaborative programming.",
+        "Licensed educational software, Python, Scratch, Office suites, and web design tools.",
+        "Digital literacy curriculum starting from secondary classes.",
+        "Fully air-conditioned, ergonomically designed workstation layout."
+      ],
+      "icon": "Monitor",
+      "image_url": "/images/skm_computer_lab_1787194177225.jpg",
+      "sort_order": 1,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "library",
+      "title": "Adarsh Public & School Central Library",
+      "subtitle": "Treasury of Knowledge and Research",
+      "tag": "Knowledge Vault",
+      "stats": "1,400+ Volumes | 20+ Periodicals & Journals",
+      "description": "A sanctuary for avid readers and researchers. The Adarsh Public Library houses rich collections of Gujarati literature, world classics, encyclopedia series, NCERT reference books, and competitive exam preparation material for GPSC/UPSC/NEET.",
+      "features": [
+        "Over 1,400 cataloged books covering science, history, philosophy, and competitive exams.",
+        "Quiet, well-ventilated reading hall with dedicated study cubicles.",
+        "Daily national and regional newspapers in Gujarati, English, and Hindi.",
+        "Digital index system for rapid book search and borrowing management."
+      ],
+      "icon": "Library",
+      "image_url": "/images/skm_school_library_1787194194176.jpg",
+      "sort_order": 2,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "science-labs",
+      "title": "Advanced Science & Physics Laboratories",
+      "subtitle": "Physics, Chemistry & Life Science Practical Labs",
+      "tag": "STEM Practical",
+      "stats": "3 Dedicated Labs | Individual Workstations",
+      "description": "Equipped to meet and exceed GSEB and national STEM standards, our science laboratories provide students with experiential learning opportunities. Calibrated apparatus, optical benches, analytical balances, and safety-certified chemical reagent stations ensure hands-on mastery.",
+      "features": [
+        "Separate state-of-the-art labs for Physics, Chemistry, and Biology.",
+        "Safety emergency showers, eye-wash stations, and chemical fume exhaust systems.",
+        "High-resolution compound microscopes and prepared botanical/zoological specimens.",
+        "Teacher demonstration bench equipped with digital projection."
+      ],
+      "icon": "FlaskConical",
+      "image_url": "/images/skm_physics_lab_1787194159238.jpg",
+      "sort_order": 3,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "home-science-lab",
+      "title": "Home Science & Practical Workshop Wing",
+      "subtitle": "Vocational Life-Skills Training Center",
+      "tag": "Vocational Skill",
+      "stats": "Dedicated Cooking Stations & Sewing Units",
+      "description": "Established in the late 1980s and continuously upgraded, our Home Science lab provides hands-on culinary science, dietetics, nutrition calculation, garment design, and household management practicals for girl students.",
+      "features": [
+        "Modern kitchen stations with gas piping, ovens, and food processing equipment.",
+        "Fabric design and stitching machines for vocational tailoring.",
+        "Dietary planning and child development laboratory modules.",
+        "Practical demonstration areas for healthy cooking and preservation."
+      ],
+      "icon": "Utensils",
+      "image_url": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80",
+      "sort_order": 4,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "sports-campus",
+      "title": "Sports Grounds & Campus Amenities",
+      "subtitle": "Spacious Playfields & Clean Water Tube-Well Facility",
+      "tag": "Health & Wellness",
+      "stats": "Full-Sized Grounds | 24/7 RO Purified Water",
+      "description": "Physical vigor and campus well-being are central to SKM values. Our sprawling grounds accommodate cricket pitches, volleyball courts, running tracks, and open-air assembly pavilions. Supported by our deep-bore tube-well and RO purification systems.",
+      "features": [
+        "Spacious sports playground for football, cricket, volleyball, and kabaddi.",
+        "Dedicated drinking water tube-well facility with advanced RO filtration systems.",
+        "Lush green tree-lined walkways and open-air assembly ground.",
+        "Modern clean washroom facilities with continuous running water."
+      ],
+      "icon": "Trophy",
+      "image_url": "/images/skm_sports_ground_1787194210261.jpg",
+      "sort_order": 5,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "board-center",
+      "title": "Official GSEB Board Examination Hub",
+      "subtitle": "State Board Certified Examination & Assessment Center",
+      "tag": "Institutional Prestige",
+      "stats": "100% CCTV Monitored | 600+ Seating Capacity",
+      "description": "SKM High School proudly serves as a designated, high-security GSEB Board Examination Center for Banaskantha district. Featuring comprehensive CCTV surveillance, soundproof testing halls, and biometric authentication protocols.",
+      "features": [
+        "GSEB accredited testing facility with high-definition CCTV recording.",
+        "Dedicated strong-room with double-lock security protocols.",
+        "Capacity to host over 600 candidates simultaneously with comfortable benching.",
+        "Centrally located with easy highway access from Kanodar and neighboring towns."
+      ],
+      "icon": "ShieldCheck",
+      "image_url": "/images/skm_building_real_1787194137584.jpg",
+      "sort_order": 6,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "year": "1956",
+      "period": "May 28, 1956",
+      "title": "Establishment of Sarvoday Kelavani Mandal & Humble Beginnings",
+      "category": "founding",
+      "highlight": "Foundation Stone of Educational Transformation in North Gujarat",
+      "description": "Sarvoday Kelavani Mandal was founded by visionary community elders in Kanodar. In an inspiring act of selflessness, primary classes commenced in the home of Late Shri Mamjibhai Alimad Mukhi with a mission to bring formal education to every child.",
+      "details": [
+        "Founded under the visionary leadership of Sarvoday Kelavani Mandal trustees.",
+        "Classes inaugurated in the residence of Late Shri Mamjibhai Alimad Mukhi.",
+        "Began with dedicated volunteer teachers and a fervent community spirit to eradicate educational backwardness."
+      ],
+      "icon_name": "GraduationCap",
+      "image_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+      "sort_order": 1,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "m2",
+      "year": "1959 - 1960",
+      "period": "1959 – 1960",
+      "title": "School Campus Construction & First S.S.C. Graduating Batch",
+      "category": "expansion",
+      "highlight": "Permanent Campus & First Historic Matriculation Batch",
+      "description": "A permanent, sprawling school building was constructed through collective community philanthropy. The S.S.C. (Secondary School Certificate) class was officially started, graduating its very first matriculation cohort with flying colors.",
+      "details": [
+        "Construction of dedicated brick-and-mortar classrooms, administrative wing, and central courtyard.",
+        "Official recognition from the State Department of Education.",
+        "Celebration of Kanodar’s first native batch of high school graduates who went on to become doctors, engineers, and teachers."
+      ],
+      "icon_name": "Building",
+      "image_url": "/images/skm_building_real_1787194137584.jpg",
+      "sort_order": 2,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "m3",
+      "year": "1976",
+      "period": "1976",
+      "title": "Commencement of Higher Secondary Section (H.S.C. 10+2)",
+      "category": "stream",
+      "highlight": "Pioneering 10+2 Higher Secondary Education in the Region",
+      "description": "Meeting the surging academic aspirations of students from Kanodar and surrounding villages, the Higher Secondary Section (Std 11th & 12th) was launched, creating a seamless pathway into college and professional careers.",
+      "details": [
+        "Introduced advanced higher secondary pedagogy under the 10+2 education system.",
+        "Expanded library and lecture halls to accommodate higher secondary scholars.",
+        "Attracted motivated students across Banaskantha district."
+      ],
+      "icon_name": "Award",
+      "image_url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+      "sort_order": 3,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "m4",
+      "year": "1987 - 1989",
+      "period": "1987 – 1989",
+      "title": "Vocational Empowerment: Home Science & Electrical Labs",
+      "category": "expansion",
+      "highlight": "Life-Skills & Practical Vocational Workshop Integration",
+      "description": "Recognizing the importance of hands-on skills, the school introduced specialized Home Science curriculum for female students and Electrical/Technical workshops for male students, backed by a custom-built Home Science practical laboratory.",
+      "details": [
+        "Built a dedicated Home Science Laboratory with modern culinary, tailoring, and nutrition stations for girl students.",
+        "Established Electrical Gadgets and Electronics practical workshops for vocational self-reliance.",
+        "Created career readiness and entrepreneurial foundations for both girls and boys."
+      ],
+      "icon_name": "Wrench",
+      "image_url": "/images/skm_physics_lab_1787194159238.jpg",
+      "sort_order": 4,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "m5",
+      "year": "1995 - 1997",
+      "period": "1995 – 1997",
+      "title": "Dawoodi Bohra Welfare Trust, R.K. Palasara Pariwar & Science Stream",
+      "category": "stream",
+      "highlight": "Launch of Science Stream & A.N. Musa Computer Centre",
+      "description": "A watershed era marked by generous philanthropic support from the Dawoodi Bohra Welfare Trust and R.K. Palasara Pariwar. The school established the elite Higher Secondary Science Stream and founded the state-of-the-art A.N. Musa Computer Centre.",
+      "details": [
+        "Inauguration of the prestigious A.N. Musa Computer Centre providing IT literacy.",
+        "Formal launch of Higher Secondary Science Stream with specialized Physics, Chemistry, and Biology laboratories.",
+        "Generous funding and infrastructural grants from Dawoodi Bohra Welfare Trust and R.K. Palasara Pariwar."
+      ],
+      "icon_name": "Cpu",
+      "image_url": "/images/skm_computer_lab_1787194177225.jpg",
+      "sort_order": 5,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "m6",
+      "year": "2004 - Present",
+      "period": "2004 – Present Day",
+      "title": "Digital High-Tech Labs, Smart Campus & Board Assessment Hub",
+      "category": "modernization",
+      "highlight": "Futuristic Digital Classrooms & Regional Assessment Center",
+      "description": "Continuous evolution into a 21st-century digital center of excellence with high-speed LAN networking, smart interactive teaching boards, digital knowledge repositories, and being designated as an official GSEB Board Examination Assessment Hub.",
+      "details": [
+        "Upgraded computer labs with 80+ networked desktop units and gigabit optical fiber connectivity.",
+        "Official Board Examination Assessment and Evaluation Center for Banaskantha GSEB exams.",
+        "Integration of interactive digital pedagogy, Adarsh Public Library automation, and solar eco-initiatives."
+      ],
+      "icon_name": "Sparkles",
+      "image_url": "/images/skm_physics_lab_1787194159238.jpg",
+      "sort_order": 6,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq_1",
+      "question": "What is the admission procedure for Secondary (Std 8-10) and Higher Secondary (Std 11-12)?",
+      "answer": "Admissions begin in May/June for the upcoming academic year. For Secondary classes (Std 8-10), admissions are granted based on previous grade marksheet and School Leaving Certificate (L.C.). For Higher Secondary Science and General streams, admissions are allotted based on GSEB Std 10th S.S.C. board marks and merit counseling. Online admission inquiry forms can also be submitted via this website.",
+      "category": "admissions",
+      "sort_order": 1,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "faq_2",
+      "question": "What academic streams are available in the Higher Secondary Section?",
+      "answer": "SKM High School offers: 1) Higher Secondary Science Stream (Group A - Maths/Engineering & Group B - Biology/Medical) with advanced lab practicals and GUJCET guidance; 2) Higher Secondary General Stream (Commerce & Arts); and 3) Vocational Life-Skill programs including Home Science for girls and Electrical/Technical workshops for boys.",
+      "category": "academics",
+      "sort_order": 2,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "faq_3",
+      "question": "What are the school timings and shifts?",
+      "answer": "The school operates two well-organized sessions: Morning Shift (7:30 AM to 1:15 PM) primarily for Higher Secondary and Science practical batches, and General Shift (11:30 AM to 5:30 PM) for Secondary classes. Administrative and office desks operate from 8:00 AM to 2:00 PM Monday through Saturday.",
+      "category": "general",
+      "sort_order": 3,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "faq_4",
+      "question": "Are there scholarship programs available for deserving and underprivileged students?",
+      "answer": "Yes. Sarvoday Kelavani Mandal, along with the Dawoodi Bohra Welfare Trust and R.K. Palasara Pariwar, provides multiple merit-cum-means scholarships, fee waivers for meritorious students, and free textbooks/uniforms for underprivileged scholars to ensure no child is denied education.",
+      "category": "admissions",
+      "sort_order": 4,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "faq_5",
+      "question": "What safety, laboratory, and campus amenities exist for girl students?",
+      "answer": "SKM High School is deeply committed to women's empowerment. We feature dedicated Home Science labs, separate clean sanitation facilities, full CCTV coverage, female faculty mentorship, and specialized self-defense and guidance counseling for female students.",
+      "category": "facilities",
+      "sort_order": 5,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    },
+    {
+      "id": "faq_6",
+      "question": "How can parents track official school announcements, timetables, and teacher meetings?",
+      "answer": "Parents and students can access the live Announcements & Circulars section on this portal for official circulars, exam timetables, and board notices, or contact our faculty and administrative desk during office hours.",
+      "category": "general",
+      "sort_order": 6,
+      "status": "published",
+      "created_at": "2026-11-09T04:07:13.972Z",
+      "updated_at": "2026-11-09T04:07:13.972Z"
+    }
+  ],
+  "settings": {
+    "school_name": "SKM High School & Higher Secondary School",
+    "short_name": "SKM High School, Kanodar",
+    "trust_name": "Sarvoday Kelavani Mandal, Kanodar",
+    "est_year": "1956",
+    "phone": "02742 242 933",
+    "alternate_phone": "+91 2742 242 934",
+    "email": "info@skmkanodar.org",
+    "website": "https://skmhighschool.in",
+    "address": "Kanodar, Banaskantha District, Gujarat 385520",
+    "plus_code": "39VX+33X Kanodar, Gujarat",
+    "office_hours": "Monday – Saturday: 7:30 AM – 1:30 PM (Morning Shift) | 11:30 AM – 5:30 PM (General Shift)",
+    "president_name": "Shri Haji Abdulrazak M. Mukhi",
+    "president_role": "President, Sarvoday Kelavani Mandal, Kanodar",
+    "president_quote": "To provide better educational facilities, empower every child with modern skills, and nurture self-reliant leaders for tomorrow.",
+    "president_message": "Since our humble inception in 1956 in Late Shri Mamjibhai Alimad Mukhi's residence, Sarvoday Kelavani Mandal has been driven by one sacred conviction: that quality education is the birthright of every child in Kanodar and surrounding rural regions. Over seven decades, with the generous benevolence of our donors, Dawoodi Bohra Welfare Trust, and R.K. Palasara Pariwar, we have built a modern temple of learning with state-of-the-art science labs, high-tech computer centres, and dedicated vocational training. We invite every student and parent to join hands in this journey of knowledge, integrity, and self-reliance.",
+    "academic_year": "2026–2027",
+    "admission_open": true,
+    "hero_headline": "Empowering Minds, Shaping Futures Since 1956",
+    "hero_subheadline": "Providing quality, value-centric, and modern education in Kanodar across Secondary, Higher Secondary Science, and Technical & Vocational Streams.",
+    "hero_stat_1_val": "1956",
+    "hero_stat_1_label": "Year Established",
+    "hero_stat_1_sub": "Founded by Sarvoday Kelavani Mandal",
+    "hero_stat_2_val": "3 Streams",
+    "hero_stat_2_label": "Secondary & Higher Secondary",
+    "hero_stat_2_sub": "Science, General & Vocational",
+    "hero_stat_3_val": "80+ PCs",
+    "hero_stat_3_label": "A.N. Musa Computer Lab",
+    "hero_stat_3_sub": "High-Speed Gigabit LAN Connectivity",
+    "hero_stat_4_val": "25k+",
+    "hero_stat_4_label": "Global Alumni Network",
+    "hero_stat_4_sub": "Leaders in Medicine, Tech & Business",
+    "gseb_center_code": "02.045 / 52.012"
+  },
+  "audit_logs": [
+    {
+      "id": "log_1794496001730_z8ng",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Documents",
+      "action": "DELETE",
+      "details": "Deleted document: Scholarship Application Form for Girl Scholars (DBWT & RKP)",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-12T15:06:41.732Z"
+    },
+    {
+      "id": "log_1794484218780_y296",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGIN",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged into CMS",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-12T11:50:18.780Z"
+    },
+    {
+      "id": "log_1794244587839_rx0i",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGOUT",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged out",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T17:16:27.839Z"
+    },
+    {
+      "id": "log_1794242511897_la6a",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGIN",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged into CMS",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T16:41:51.901Z"
+    },
+    {
+      "id": "log_1794222291541_35zv",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGOUT",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged out",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T11:04:51.541Z"
+    },
+    {
+      "id": "log_1794222287384_p89y",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGIN",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged into CMS",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T11:04:47.384Z"
+    },
+    {
+      "id": "log_1794222220240_bs2b",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGOUT",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged out",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T11:03:40.241Z"
+    },
+    {
+      "id": "log_1794222214079_ocni",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGIN",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged into CMS",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T11:03:34.079Z"
+    },
+    {
+      "id": "log_1794221824994_4k70",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGOUT",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged out",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T10:57:04.994Z"
+    },
+    {
+      "id": "log_1794221063960_nqys",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Announcements",
+      "action": "CREATE",
+      "details": "Created announcement: website-testing",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T10:44:23.962Z"
+    },
+    {
+      "id": "log_1794220676233_pttn",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Achievements",
+      "action": "DELETE",
+      "details": "Deleted achievement: GSEB Std 12th HSC Science Stream State & District Top Rank",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T10:37:56.233Z"
+    },
+    {
+      "id": "log_1794220636249_sil2",
+      "user_name": "SKM Admin (Principal & Secretary)",
+      "user_email": "admin@skmhighschool.in",
+      "module": "Authentication",
+      "action": "LOGIN",
+      "details": "Admin user SKM Admin (Principal & Secretary) logged into CMS",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T10:37:16.252Z"
+    },
+    {
+      "id": "log_1",
+      "user_name": "System Initializer",
+      "user_email": "system@skmhighschool.in",
+      "module": "System",
+      "action": "INITIALIZE",
+      "details": "SKM High School database successfully initialized with historical records and faculty profiles.",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-11-09T04:07:13.972Z"
+    }
+  ]
+}
