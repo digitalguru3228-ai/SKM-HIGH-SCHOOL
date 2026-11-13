@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { HelpCircle, ChevronDown, ChevronUp, Search, MessageSquare, X } from 'lucide-react';
 import { FAQS } from '../data/schoolData';
 import { api, FaqItem } from '../services/api';
@@ -64,9 +65,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ theme = 'dark' }) => {
             <HelpCircle className="w-3.5 h-3.5 text-amber-500" />
             <span>Parent & Student Guidance</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Frequently Asked Questions
-          </h2>
+          <CmsHeading field="faqTitle" fallback="Frequently Asked Questions" className="text-3xl sm:text-4xl font-extrabold tracking-tight" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             Find answers to common questions about admissions, streams, scholarships, and campus facilities. All managed dynamically by our school administration.
           </p>

@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 // @ts-ignore React type declarations are unavailable in this project.
 import React, { useState, useEffect } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { Quote, HeartHandshake, Award, ShieldCheck, Sparkles, Building } from 'lucide-react';
 import { MANAGEMENT_LEADERSHIP, SCHOOL_INFO } from '../data/schoolData';
 import { SchoolLogo } from './SchoolLogo';
@@ -58,9 +59,7 @@ export const ManagementMessage: React.FC<ManagementMessageProps> = ({ theme = 'd
             <HeartHandshake className="w-3.5 h-3.5" />
             <span>Leadership & Vision</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white">
-            Message from {trustName}
-          </h2>
+          <CmsHeading field="managementTitle" fallback="Message from {trustName}" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
             Guiding educational empowerment in Kanodar since {settings?.est_year || '1956'} through selfless community service, philanthropy, and modern values.
           </p>

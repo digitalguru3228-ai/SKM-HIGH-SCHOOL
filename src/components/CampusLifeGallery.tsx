@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { Camera, Eye, X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { GALLERY_ITEMS } from '../data/schoolData';
 import { GalleryItem } from '../types';
@@ -102,9 +103,7 @@ export const CampusLifeGallery: React.FC<CampusLifeGalleryProps> = ({ theme = 'd
             <Camera className="w-3.5 h-3.5" />
             <span>Campus Life & Activities</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Vibrant Moments at SKM Kanodar
-          </h2>
+          <CmsHeading field="galleryTitle" fallback="Vibrant Moments at SKM Kanodar" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             Witness our students in action—from high-energy sports competitions to state science exhibitions and Scout-Guide parades.
           </p>

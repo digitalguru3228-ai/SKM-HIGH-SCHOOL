@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { SchoolLogo } from './SchoolLogo';
 import { SCHOOL_INFO } from '../data/schoolData';
+import { getSiteContent, SITE_CONTENT_DEFAULTS } from '../services/siteContent';
 
 interface HeaderProps {
   theme: 'light' | 'dark';
@@ -32,6 +33,9 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [cmsHeader, setCmsHeader] = useState<any>(SITE_CONTENT_DEFAULTS.header);
+
+  useEffect(() => { getSiteContent('header').then(setCmsHeader).catch(() => {}); }, []);
 
   const isDark = theme === 'dark';
 
@@ -80,17 +84,7 @@ export const Header: React.FC<HeaderProps> = ({
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = [
-    { name: 'Home', href: '#home', id: 'home' },
-    { name: 'Announcements', href: '#announcements', id: 'announcements' },
-    { name: 'Legacy', href: '#legacy', id: 'legacy' },
-    { name: 'Academics', href: '#academics', id: 'academics' },
-    { name: 'Faculty', href: '#teachers', id: 'teachers' },
-    { name: 'Achievements', href: '#achievements', id: 'achievements' },
-    { name: 'Facilities', href: '#facilities', id: 'facilities' },
-    { name: 'Gallery', href: '#gallery', id: 'gallery' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
-  ];
+  const navLinks = (cmsHeader.links || SITE_CONTENT_DEFAULTS.header.links).filter((link: any) => link.visible !== false);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -136,14 +130,14 @@ export const Header: React.FC<HeaderProps> = ({
                     ? 'text-white group-hover:text-amber-400' 
                     : 'text-slate-950 group-hover:text-amber-600'
                 }`}>
-                  SKM High School
+                  {cmsHeader.schoolName || 'SKM High School'}
                 </span>
                 <span className="hidden xs:inline-block px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30">
                   Kanodar
                 </span>
               </div>
               <span className={`text-[10px] sm:text-xs font-medium tracking-tight ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
-                Est. 1956 &bull; Sarvoday Kelavani Mandal
+                {cmsHeader.subtitle || 'Est. 1956 • Sarvoday Kelavani Mandal'}
               </span>
             </div>
           </a>

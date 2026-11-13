@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { 
   Building2, 
   Monitor, 
@@ -68,9 +69,7 @@ export const FacilitiesSection: React.FC<FacilitiesSectionProps> = ({ theme = 'd
             <Building2 className="w-3.5 h-3.5" />
             <span>Infrastructure & Learning Spaces</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white">
-            World-Class Campus Facilities
-          </h2>
+          <CmsHeading field="facilitiesTitle" fallback="World-Class Campus Facilities" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
             Engineered to empower modern learning, experimental curiosity, digital mastery, and holistic student wellness.
           </p>

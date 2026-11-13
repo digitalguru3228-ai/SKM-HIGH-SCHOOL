@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 import React, { useState, useMemo, useEffect } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { 
   Trophy, 
   Award, 
@@ -103,9 +104,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
             <Trophy className="w-3.5 h-3.5 text-amber-500" />
             <span>Honors, Accolades & Milestones</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Our Achievements & Distinctions
-          </h2>
+          <CmsHeading field="achievementsTitle" fallback="Our Achievements & Distinctions" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             Celebrating academic toppers, science innovators, national scout awardees, district sports champions, and our inspiring 70-year legacy.
           </p>

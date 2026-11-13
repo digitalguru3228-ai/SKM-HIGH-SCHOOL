@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { SchoolLogo } from './SchoolLogo';
 import { SCHOOL_INFO } from '../data/schoolData';
+import { getSiteContent, SITE_CONTENT_DEFAULTS } from '../services/siteContent';
 
 interface FooterProps {
   theme?: 'light' | 'dark';
@@ -26,6 +27,8 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenAdmission 
 }) => {
   const isDark = theme === 'dark';
+  const [cmsFooter, setCmsFooter] = React.useState<any>(SITE_CONTENT_DEFAULTS.footer);
+  React.useEffect(() => { getSiteContent('footer').then(setCmsFooter).catch(() => {}); }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -65,19 +68,19 @@ export const Footer: React.FC<FooterProps> = ({
               <SchoolLogo size="lg" />
               <div>
                 <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight">
-                  SKM High School & Higher Secondary School
+                  {cmsFooter.schoolTitle || 'SKM High School & Higher Secondary School'}
                 </h3>
                 <p className="text-xs font-semibold text-amber-400">
-                  Kanodar, Gujarat &bull; Est. 1956
+                  {cmsFooter.locationLine || 'Kanodar, Gujarat • Est. 1956'}
                 </p>
                 <p className="text-[11px] text-slate-400">
-                  Managed by Sarvoday Kelavani Mandal, Kanodar
+                  {cmsFooter.trustLine || 'Managed by Sarvoday Kelavani Mandal, Kanodar'}
                 </p>
               </div>
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed max-w-md pt-1">
-              Empowering generations of students with academic distinction, moral integrity, scientific mindset, and vocational self-reliance for over 70 continuous years in Kanodar.
+              {cmsFooter.description || 'Empowering generations of students with academic distinction, moral integrity, scientific mindset, and vocational self-reliance for over 70 continuous years in Kanodar.'}
             </p>
 
             <div className="pt-2 flex flex-wrap gap-2 text-[11px]">
@@ -206,7 +209,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Bar: Copyright & Back to Top */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p className="text-center sm:text-left text-[11px] sm:text-xs">
-            Copyright &copy; 2026 Sarvoday Kelavani Mandal | SKM High School & Higher Secondary School, Kanodar. All Rights Reserved.
+            {cmsFooter.copyright || 'Copyright © 2026 Sarvoday Kelavani Mandal | SKM High School & Higher Secondary School, Kanodar. All Rights Reserved.'}
           </p>
 
           <div className="flex items-center gap-3">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { 
   GraduationCap, 
   CheckCircle2, 
@@ -122,9 +123,7 @@ export const AdmissionSection: React.FC<AdmissionSectionProps> = ({ theme = 'dar
             <GraduationCap className="w-3.5 h-3.5" />
             <span>Admissions 2026 – 2027</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Apply for Admission
-          </h2>
+          <CmsHeading field="admissionTitle" fallback="Apply for Admission" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             Join a legacy of excellence. Submit your online preliminary admission inquiry or visit the Sarvoday Kelavani Mandal school administrative office in Kanodar.
           </p>

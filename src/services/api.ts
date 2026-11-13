@@ -95,6 +95,8 @@ export interface ApiStaff {
   subjects: string[];
   achievements: string;
   email: string;
+  phone?: string;
+  avatar_color?: string;
   photo_url: string;
   is_lead: boolean;
   sort_order: number;
@@ -822,43 +824,42 @@ async login(email: string, password: string) {
   }
 
   try {
-    const res = await fetch(`${API_BASE}/auth/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: cleanEmail,
-        password
-      })
-    });
-
-    const data = await res.json();
-
-    if (!res.ok || !data.success) {
-      return {
-        success: false,
-        error: data.error || 'Invalid email or password.'
-      };
+    if (isSupabaseConfigured() && supabase) {
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({ email: cleanEmail, password });
+      if (authError || !authData.user) return { success: false, error: authError?.message || 'Invalid email or password.' };
+      const { data: profile, error: profileError } = await supabase.from('admin_profiles').select('id, full_name, email, role, is_active').eq('id', authData.user.id).single();
+      if (profileError || !profile || !profile.is_active) {
+        await supabase.auth.signOut();
+        return { success: false, error: 'This account is not authorized as an active school administrator. Ask the Super Admin to provision your account.' };
+      }
+      const user: AdminUser = { id: profile.id, name: profile.full_name || authData.user.email || 'Administrator', email: profile.email || authData.user.email || cleanEmail, role: profile.role };
+      localStorage.setItem('skm_admin_user', JSON.stringify(user));
+      await supabase.from('admin_login_history').insert({ admin_id: user.id, email: user.email, event_type: 'login', user_agent: navigator.userAgent });
+      return { success: true, user };
     }
-
+    const res = await fetch(`${API_BASE}/auth/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: cleanEmail, password }) });
+    const data = await res.json();
+    if (!res.ok || !data.success) return { success: false, error: data.error || 'Invalid email or password.' };
     localStorage.setItem('skm_admin_jwt', data.token);
-    localStorage.setItem(
-      'skm_admin_user',
-      JSON.stringify(data.user)
-    );
-
+    localStorage.setItem('skm_admin_user', JSON.stringify(data.user));
     return data;
-
-  } catch (error) {
-    return {
-      success: false,
-      error: 'Cannot connect to authentication server.'
-    };
-  }
+  } catch (error: any) { return { success: false, error: error?.message || 'Cannot connect to authentication server.' }; }
 },
 
   async changePassword(currentPassword: string, newPassword: string): Promise<{ success: boolean; error?: string; message?: string }> {
+    if (isSupabaseConfigured() && supabase) {
+      try {
+        const { data: userData } = await supabase.auth.getUser();
+        const email = userData.user?.email;
+        if (!email) return { success: false, error: 'Your Supabase session has expired. Sign in again.' };
+        const { error: verifyError } = await supabase.auth.signInWithPassword({ email, password: currentPassword });
+        if (verifyError) return { success: false, error: 'Current password is incorrect.' };
+        const { error } = await supabase.auth.updateUser({ password: newPassword });
+        if (error) return { success: false, error: error.message };
+        await supabase.auth.signOut();
+        return { success: true, message: 'Password updated. Sign in again.' };
+      } catch (e: any) { return { success: false, error: e?.message || 'Password update failed.' }; }
+    }
     try {
       const res = await fetch(`${API_BASE}/auth/change-password`, {
         method: 'POST',
@@ -878,6 +879,19 @@ async login(email: string, password: string) {
   },
 
   async changeEmail(currentPassword: string, newEmail: string, confirmEmail: string): Promise<{ success: boolean; error?: string; message?: string }> {
+    if (isSupabaseConfigured() && supabase) {
+      try {
+        if (newEmail.trim().toLowerCase() !== confirmEmail.trim().toLowerCase()) return { success: false, error: 'Email addresses do not match.' };
+        const { data: userData } = await supabase.auth.getUser();
+        const email = userData.user?.email;
+        if (!email) return { success: false, error: 'Your Supabase session has expired. Sign in again.' };
+        const { error: verifyError } = await supabase.auth.signInWithPassword({ email, password: currentPassword });
+        if (verifyError) return { success: false, error: 'Current password is incorrect.' };
+        const { error } = await supabase.auth.updateUser({ email: newEmail.trim().toLowerCase() });
+        if (error) return { success: false, error: error.message };
+        return { success: true, message: 'Confirmation email sent. Verify the new email address to complete the change.' };
+      } catch (e: any) { return { success: false, error: e?.message || 'Email update failed.' }; }
+    }
     try {
       const res = await fetch(`${API_BASE}/auth/change-email`, {
         method: 'POST',
@@ -897,19 +911,20 @@ async login(email: string, password: string) {
   },
 
   async logout(): Promise<void> {
-    try {
-      await fetch(`${API_BASE}/auth/logout`, {
-        method: 'POST',
-        headers: this.getAuthHeaders()
-      });
-    } catch (e) {
-      // ignore
-    }
+    if (isSupabaseConfigured() && supabase) await supabase.auth.signOut();
+    else { try { await fetch(`${API_BASE}/auth/logout`, { method: 'POST', headers: this.getAuthHeaders() }); } catch (e) { /* ignore */ } }
     localStorage.removeItem('skm_admin_jwt');
     localStorage.removeItem('skm_admin_user');
   },
 
   async getCurrentUser(): Promise<AdminUser | null> {
+    if (isSupabaseConfigured() && supabase) {
+      const { data: authData } = await supabase.auth.getUser();
+      if (!authData.user) return null;
+      const { data: profile, error } = await supabase.from('admin_profiles').select('id, full_name, email, role, is_active').eq('id', authData.user.id).maybeSingle();
+      if (error || !profile || !profile.is_active) { await supabase.auth.signOut(); return null; }
+      return { id: profile.id, name: profile.full_name || authData.user.email || 'Administrator', email: profile.email || authData.user.email || '', role: profile.role };
+    }
     try {
       const res = await fetch(`${API_BASE}/auth/me`, {
         headers: this.getAuthHeaders()

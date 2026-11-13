@@ -18,6 +18,8 @@ import {
   ApiFaq
 } from '../../services/api';
 import { SchoolLogo } from '../SchoolLogo';
+import { SiteEditor } from './SiteEditor';
+import { AdminAccess } from './AdminAccess';
 import { 
   LayoutDashboard, 
   Bell, 
@@ -69,6 +71,8 @@ interface AdminDashboardProps {
 
 type TabType = 
   | 'dashboard'
+  | 'siteEditor'
+  | 'adminAccess'
   | 'announcements'
   | 'events'
   | 'programs'
@@ -307,6 +311,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
           {[
             { id: 'dashboard', label: 'Dashboard Overview', icon: LayoutDashboard },
+            ...(currentUser.role !== 'viewer' ? [{ id: 'siteEditor', label: 'Website Content Studio', icon: Sparkles }] : []),
             { id: 'announcements', label: 'Announcements & Circulars', icon: Bell, count: announcements.length },
             { id: 'events', label: 'Events & Functions', icon: Calendar, count: events.length },
             { id: 'programs', label: 'Academic Streams', icon: GraduationCap, count: programs.length },
@@ -320,6 +325,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             { id: 'faqs', label: 'Parent Guidance FAQs', icon: HelpCircle, count: faqs.length },
             { id: 'settings', label: 'School Profile & Hero', icon: Building2 },
             ...(currentUser.role === 'super_admin' ? [
+              { id: 'adminAccess', label: 'Supabase Admin Access', icon: Shield },
               { id: 'users', label: 'Admin Accounts', icon: Shield },
               { id: 'audit', label: 'Activity Audit Logs', icon: History }
             ] : [])
@@ -518,6 +524,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           ) : (
             <>
               {/* TAB 1: DASHBOARD */}
+              {activeTab === 'siteEditor' && currentUser.role !== 'viewer' && <SiteEditor isDark={isDark} notify={showNotification} />}
+              {activeTab === 'adminAccess' && currentUser.role === 'super_admin' && <AdminAccess isDark={isDark} notify={showNotification} />}
+
               {activeTab === 'dashboard' && stats && (
                 <div className="space-y-6">
                   {/* Quick Action Banner */}

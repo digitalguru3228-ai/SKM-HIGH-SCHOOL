@@ -17,6 +17,7 @@ import {
 import { SCHOOL_INFO } from '../data/schoolData';
 import { IMAGES } from '../assets';
 import { api, ApiSettings } from '../services/api';
+import { getSiteContent, SITE_CONTENT_DEFAULTS } from '../services/siteContent';
 
 interface HeroProps {
   theme?: 'light' | 'dark';
@@ -31,6 +32,9 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   const isDark = theme === 'dark';
   const [settings, setSettings] = useState<ApiSettings | null>(null);
+  const [cmsHero, setCmsHero] = useState<any>(SITE_CONTENT_DEFAULTS.hero);
+
+  useEffect(() => { getSiteContent('hero').then(setCmsHero).catch(() => {}); }, []);
 
   useEffect(() => {
     api.getPublicSettings()
@@ -53,8 +57,8 @@ export const Hero: React.FC<HeroProps> = ({
 
   const estYear = settings?.est_year || SCHOOL_INFO.establishedYear || '1956';
   const trustName = settings?.trust_name || SCHOOL_INFO.trustName || 'Sarvoday Kelavani Mandal, Kanodar';
-  const headline = settings?.hero_headline || 'Empowering Minds, Shaping Futures Since 1956';
-  const subheadline = settings?.hero_subheadline || 'Providing quality, value-centric, and modern education in Kanodar across Secondary, Higher Secondary Science, and Technical & Vocational Streams.';
+  const headline = cmsHero.headline || settings?.hero_headline || 'Empowering Minds, Shaping Futures Since 1956';
+  const subheadline = cmsHero.subheadline || settings?.hero_subheadline || 'Providing quality, value-centric, and modern education in Kanodar across Secondary, Higher Secondary Science, and Technical & Vocational Streams.';
 
   return (
     <section 
@@ -73,7 +77,7 @@ export const Hero: React.FC<HeroProps> = ({
             isDark ? 'opacity-20 mix-blend-luminosity scale-105' : 'opacity-10 scale-105'
           }`}
           style={{
-            backgroundImage: `url('${IMAGES.building}')`
+            backgroundImage: `url('${cmsHero.backgroundImage || IMAGES.building}')`
           }}
         />
         
@@ -108,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({
             }`}>
               <span className="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider">
-                Est. {estYear} &bull; {trustName}
+                {cmsHero.badge || `Est. ${estYear} • ${trustName}`}
               </span>
             </div>
 
@@ -153,7 +157,7 @@ export const Hero: React.FC<HeroProps> = ({
                 className="shimmer-btn touch-target w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 transition-all cursor-pointer transform hover:-translate-y-0.5 active:scale-95"
               >
                 <Bell className="w-4 h-4" />
-                <span>View Announcements</span>
+                <span>{cmsHero.primaryButton || 'View Announcements'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -168,7 +172,7 @@ export const Hero: React.FC<HeroProps> = ({
                 }`}
               >
                 <PlayCircle className="w-4 h-4 text-amber-500" />
-                <span>Watch Campus Tour</span>
+                <span>{cmsHero.secondaryButton || 'Watch Campus Tour'}</span>
               </button>
 
               {/* Tertiary: Quick Apply */}

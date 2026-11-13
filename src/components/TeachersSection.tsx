@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { 
   Users, 
   Award, 
@@ -134,9 +135,7 @@ export const TeachersSection: React.FC<TeachersSectionProps> = ({ theme = 'dark'
             <Users className="w-3.5 h-3.5" />
             <span>Dedicated Mentors & Academic Leaders</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Teachers & Faculty Directory
-          </h2>
+          <CmsHeading field="facultyTitle" fallback="Teachers & Faculty Directory" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             Meet our distinguished educators, senior lecturers, laboratory demonstrators, and vocational trainers committed to academic excellence and moral character.
           </p>

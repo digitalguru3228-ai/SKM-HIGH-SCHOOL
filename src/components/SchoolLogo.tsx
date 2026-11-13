@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { IMAGES } from '../assets';
+import { getSiteContent } from '../services/siteContent';
 
 export const SchoolLogo: React.FC<{ className?: string; size?: 'sm' | 'md' | 'lg' | 'xl' }> = ({
   className = '',
   size = 'md'
 }) => {
   const [imgError, setImgError] = useState(false);
+  const [logoUrl, setLogoUrl] = useState('');
+  React.useEffect(() => { getSiteContent('branding').then(data => setLogoUrl(data.logoUrl || '')).catch(() => {}); }, []);
 
   const dimensions = {
     sm: 'w-10 h-10',
@@ -19,7 +22,7 @@ export const SchoolLogo: React.FC<{ className?: string; size?: 'sm' | 'md' | 'lg
       <div className="w-full h-full bg-slate-950 rounded-[10px] overflow-hidden flex items-center justify-center border border-amber-400/40 p-0.5">
         {!imgError ? (
           <img
-            src={IMAGES.logo}
+            src={logoUrl || IMAGES.logo}
             alt="SKM High School Kanodar Logo"
             className="w-full h-full object-contain rounded-[8px]"
             referrerPolicy="no-referrer"

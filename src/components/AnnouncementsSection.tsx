@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { CmsHeading } from './CmsHeading';
 import { 
   Bell, 
   Search, 
@@ -121,9 +122,7 @@ export const AnnouncementsSection: React.FC<AnnouncementsSectionProps> = ({ them
             <Bell className="w-3.5 h-3.5 text-amber-500" />
             <span>Official Circulars & Notice Board</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Announcements & Notifications
-          </h2>
+          <CmsHeading field="announcementsTitle" fallback="Announcements & Notifications" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             Stay updated with verified circulars, GSEB board exam guidelines, scholarship schedules, admission criteria, and academic announcements.
           </p>

@@ -13,6 +13,7 @@ import {
   Copy
 } from 'lucide-react';
 import { SCHOOL_INFO } from '../data/schoolData';
+import { getSiteContent, SITE_CONTENT_DEFAULTS } from '../services/siteContent';
 
 interface ContactAndMapProps {
   theme?: 'light' | 'dark';
@@ -30,6 +31,11 @@ export const ContactAndMap: React.FC<ContactAndMapProps> = ({ theme = 'dark' }) 
   const [isSent, setIsSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [copiedAddress, setCopiedAddress] = useState(false);
+  const [cmsContact, setCmsContact] = useState<any>(SITE_CONTENT_DEFAULTS.contact);
+  React.useEffect(() => { getSiteContent('contact').then(setCmsContact).catch(() => {}); }, []);
+  const contactPhone = cmsContact.phone || SCHOOL_INFO.phone;
+  const contactEmail = cmsContact.email || SCHOOL_INFO.email;
+  const contactAddress = cmsContact.address || SCHOOL_INFO.shortName;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +48,7 @@ export const ContactAndMap: React.FC<ContactAndMapProps> = ({ theme = 'dark' }) 
 
   const handleCopyAddress = () => {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(`${SCHOOL_INFO.shortName}, ${SCHOOL_INFO.plusCode}`);
+      navigator.clipboard.writeText(`${contactAddress}, ${SCHOOL_INFO.plusCode}`);
       setCopiedAddress(true);
       setTimeout(() => setCopiedAddress(false), 2000);
     }
@@ -116,7 +122,7 @@ export const ContactAndMap: React.FC<ContactAndMapProps> = ({ theme = 'dark' }) 
                     Campus Address
                   </p>
                   <p className={`text-sm font-semibold mt-0.5 ${isDark ? 'text-white' : 'text-slate-900'}`}>
-                    {SCHOOL_INFO.shortName}
+                    {contactAddress}
                   </p>
                   <p className={`text-xs ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>{SCHOOL_INFO.plusCode}</p>
                   <p className="text-[11px] text-amber-600 dark:text-amber-400/90 font-mono mt-0.5">Plus Code: 39VX+33X Kanodar</p>
@@ -134,10 +140,10 @@ export const ContactAndMap: React.FC<ContactAndMapProps> = ({ theme = 'dark' }) 
                   <p className={`text-xs uppercase font-bold tracking-wider ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                     Telephone Office
                   </p>
-                  <a href={`tel:${SCHOOL_INFO.phone.replace(/\s+/g, '')}`} className={`text-sm font-bold hover:text-amber-500 transition-colors ${
+                  <a href={`tel:${contactPhone.replace(/\s+/g, '')}`} className={`text-sm font-bold hover:text-amber-500 transition-colors ${
                     isDark ? 'text-white' : 'text-slate-900'
                   }`}>
-                    {SCHOOL_INFO.phone}
+                    {contactPhone}
                   </a>
                   <p className={`text-xs mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>Alt: {SCHOOL_INFO.alternatePhone}</p>
                 </div>
@@ -154,8 +160,8 @@ export const ContactAndMap: React.FC<ContactAndMapProps> = ({ theme = 'dark' }) 
                   <p className={`text-xs uppercase font-bold tracking-wider ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                     Email & Web Portal
                   </p>
-                  <a href={`mailto:${SCHOOL_INFO.email}`} className="text-xs font-semibold text-amber-600 dark:text-amber-400 hover:underline">
-                    {SCHOOL_INFO.email}
+                  <a href={`mailto:${contactEmail}`} className="text-xs font-semibold text-amber-600 dark:text-amber-400 hover:underline">
+                    {contactEmail}
                   </a>
                   <p className={`text-xs mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>{SCHOOL_INFO.website}</p>
                 </div>
@@ -175,7 +181,7 @@ export const ContactAndMap: React.FC<ContactAndMapProps> = ({ theme = 'dark' }) 
                     School & Office Timings
                   </p>
                   <p className={`text-xs mt-0.5 leading-relaxed ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-                    {SCHOOL_INFO.officeHours}
+                    {cmsContact.officeHours || SCHOOL_INFO.officeHours}
                   </p>
                 </div>
               </div>
