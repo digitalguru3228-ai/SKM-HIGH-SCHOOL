@@ -1803,3 +1803,143 @@ async login(email: string, password: string) {
     }
   }
 };
+
+
+// ---------------------------------------------------------------------------
+// Supabase-first CMS data layer.
+// These overrides intentionally stop treating failed API calls/localStorage as
+// successful database writes. A mutation resolves only after Supabase confirms it.
+// ---------------------------------------------------------------------------
+type CmsTable =
+  | 'announcements' | 'events' | 'gallery' | 'documents' | 'staff'
+  | 'achievements' | 'admissions' | 'settings' | 'programs'
+  | 'facilities' | 'milestones' | 'faqs';
+
+async function cmsRead(table: CmsTable, publishedOnly = false, orderBy = 'created_at') {
+  if (!isSupabaseConfigured() || !supabase) throw new Error('Supabase is not configured.');
+  let query = supabase.from(table).select('*');
+  if (publishedOnly) query = query.eq('status', 'published');
+  if (orderBy) query = query.order(orderBy, { ascending: true });
+  const { data, error } = await query;
+  if (error) throw error;
+  return data || [];
+}
+
+async function cmsInsert(table: CmsTable, input: Record<string, any>) {
+  if (!isSupabaseConfigured() || !supabase) throw new Error('Supabase is not configured.');
+  const payload = {
+    ...input,
+    id: input.id || `${table.slice(0, 3)}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+    created_at: input.created_at || new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+  const { data, error } = await supabase.from(table).insert(payload).select('*').single();
+  if (error) throw error;
+  window.dispatchEvent(new CustomEvent('skm_cms_updated', { detail: { table, action: 'insert' } }));
+  return data;
+}
+
+async function cmsUpdate(table: CmsTable, id: string, input: Record<string, any>) {
+  if (!isSupabaseConfigured() || !supabase) throw new Error('Supabase is not configured.');
+  const { id: _id, created_at: _created, ...safeInput } = input;
+  const { data, error } = await supabase.from(table)
+    .update({ ...safeInput, updated_at: new Date().toISOString() })
+    .eq('id', id).select('*').single();
+  if (error) throw error;
+  window.dispatchEvent(new CustomEvent('skm_cms_updated', { detail: { table, action: 'update' } }));
+  return data;
+}
+
+async function cmsDelete(table: CmsTable, id: string) {
+  if (!isSupabaseConfigured() || !supabase) throw new Error('Supabase is not configured.');
+  const { error } = await supabase.from(table).delete().eq('id', id);
+  if (error) throw error;
+  window.dispatchEvent(new CustomEvent('skm_cms_updated', { detail: { table, action: 'delete' } }));
+}
+
+function bindCmsCrud(table: CmsTable, names: { get?: string; getPublic?: string; create?: string; update?: string; remove?: string }, orderBy = 'created_at') {
+  const target = api as any;
+  if (names.get) target[names.get] = () => cmsRead(table, false, orderBy);
+  if (names.getPublic) target[names.getPublic] = () => cmsRead(table, true, orderBy);
+  if (names.create) target[names.create] = (data: any) => cmsInsert(table, data);
+  if (names.update) target[names.update] = (id: string, data: any) => cmsUpdate(table, id, data);
+  if (names.remove) target[names.remove] = (id: string) => cmsDelete(table, id);
+}
+
+bindCmsCrud('announcements', { get: 'getAdminAnnouncements', getPublic: 'getPublicAnnouncements', create: 'createAnnouncement', update: 'updateAnnouncement', remove: 'deleteAnnouncement' }, 'created_at');
+bindCmsCrud('events', { get: 'getAdminEvents', getPublic: 'getPublicEvents', create: 'createEvent', update: 'updateEvent', remove: 'deleteEvent' }, 'event_date');
+bindCmsCrud('gallery', { get: 'getAdminGallery', getPublic: 'getPublicGallery', create: 'createGalleryItem', update: 'updateGalleryItem', remove: 'deleteGalleryItem' }, 'sort_order');
+bindCmsCrud('documents', { get: 'getAdminDocuments', getPublic: 'getPublicDocuments', create: 'createDocument', update: 'updateDocument', remove: 'deleteDocument' }, 'created_at');
+bindCmsCrud('staff', { get: 'getAdminStaff', getPublic: 'getPublicStaff', create: 'createStaff', update: 'updateStaff', remove: 'deleteStaff' }, 'sort_order');
+bindCmsCrud('achievements', { get: 'getAdminAchievements', getPublic: 'getPublicAchievements', create: 'createAchievement', update: 'updateAchievement', remove: 'deleteAchievement' }, 'created_at');
+bindCmsCrud('programs', { get: 'getAdminPrograms', getPublic: 'getPublicPrograms', create: 'createAdminProgram', update: 'updateAdminProgram', remove: 'deleteAdminProgram' }, 'sort_order');
+bindCmsCrud('facilities', { get: 'getAdminFacilities', getPublic: 'getPublicFacilities', create: 'createAdminFacility', update: 'updateAdminFacility', remove: 'deleteAdminFacility' }, 'sort_order');
+bindCmsCrud('milestones', { get: 'getAdminMilestones', getPublic: 'getPublicMilestones', create: 'createAdminMilestone', update: 'updateAdminMilestone', remove: 'deleteAdminMilestone' }, 'sort_order');
+bindCmsCrud('faqs', { get: 'getAdminFaqs', getPublic: 'getPublicFaqs', create: 'createAdminFaq', update: 'updateAdminFaq', remove: 'deleteAdminFaq' }, 'sort_order');
+
+(api as any).getPublicSettings = async () => {
+  if (!supabase) throw new Error('Supabase is not configured.');
+  const { data, error } = await supabase.from('settings').select('*').eq('id', 'current').maybeSingle();
+  if (error) throw error;
+  return data as ApiSettings | null;
+};
+(api as any).getAdminSettings = async () => {
+  if (!supabase) throw new Error('Supabase is not configured.');
+  const { data, error } = await supabase.from('settings').select('*').eq('id', 'current').maybeSingle();
+  if (error) throw error;
+  if (!data) throw new Error('Settings row is missing in Supabase. Run the database seed/setup SQL first.');
+  return data as ApiSettings;
+};
+(api as any).updateAdminSettings = async (input: Partial<ApiSettings>) => {
+  if (!supabase) throw new Error('Supabase is not configured.');
+  const { data, error } = await supabase.from('settings').upsert({ id: 'current', ...input }, { onConflict: 'id' }).select('*').single();
+  if (error) throw error;
+  window.dispatchEvent(new CustomEvent('skm_cms_updated', { detail: { table: 'settings' } }));
+  return data as ApiSettings;
+};
+(api as any).updateAdmissionStatus = async (id: string, status: string, admin_notes?: string) =>
+  cmsUpdate('admissions', id, { status, admin_notes });
+(api as any).deleteAdmission = async (id: string) => cmsDelete('admissions', id);
+(api as any).getAdminAdmissions = async () => cmsRead('admissions', false, 'created_at');
+
+
+// Preserve the optional announcement filters while keeping Supabase as source of truth.
+(api as any).getPublicAnnouncements = async (category?: string, search?: string) => {
+  if (!supabase) throw new Error('Supabase is not configured.');
+  let query = supabase.from('announcements').select('*').eq('status', 'published').order('is_pinned', { ascending: false });
+  if (category && category.toLowerCase() !== 'all') query = query.ilike('category', category);
+  if (search) query = query.or(`title.ilike.%${search}%,summary.ilike.%${search}%`);
+  const { data, error } = await query;
+  if (error) throw error;
+  return (data || []) as ApiAnnouncement[];
+};
+
+// Dashboard counts are computed from Supabase rows, not a separate legacy API server.
+(api as any).getAdminStats = async (): Promise<AdminStats> => {
+  const tables: CmsTable[] = ['announcements','events','gallery','documents','staff','achievements','admissions','programs','facilities','milestones','faqs'];
+  const results = await Promise.all(tables.map(async (table) => [table, await cmsRead(table, false, '')] as const));
+  const rows = Object.fromEntries(results) as Record<CmsTable, any[]>;
+  const announcements = rows.announcements || [];
+  const admissions = rows.admissions || [];
+  const events = rows.events || [];
+  const now = new Date().toISOString().slice(0,10);
+  return {
+    totalAnnouncements: announcements.length,
+    publishedAnnouncements: announcements.filter(x => x.status === 'published').length,
+    draftAnnouncements: announcements.filter(x => x.status === 'draft').length,
+    totalEvents: events.length,
+    upcomingEvents: events.filter(x => x.event_date >= now).length,
+    totalGallery: (rows.gallery || []).length,
+    totalDocuments: (rows.documents || []).length,
+    totalStaff: (rows.staff || []).length,
+    totalAchievements: (rows.achievements || []).length,
+    totalPrograms: (rows.programs || []).length,
+    totalFacilities: (rows.facilities || []).length,
+    totalMilestones: (rows.milestones || []).length,
+    totalFaqs: (rows.faqs || []).length,
+    totalAdmissions: admissions.length,
+    newAdmissions: admissions.filter(x => x.status === 'new').length,
+    recentLogs: [],
+    recentAdmissions: admissions.slice().sort((a,b) => String(b.created_at).localeCompare(String(a.created_at))).slice(0,5),
+  };
+};

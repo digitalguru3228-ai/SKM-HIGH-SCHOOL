@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { api, AdminUser } from './services/api';
+import { supabase } from './lib/supabase';
+import { getSiteContent, SITE_CONTENT_DEFAULTS } from './services/siteContent';
 import { AdminLogin } from './components/admin/AdminLogin';
 import { AdminDashboard } from './components/admin/AdminDashboard';
 import { NoticeBanner } from './components/NoticeBanner';
@@ -25,6 +27,7 @@ export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [isVideoTourOpen, setIsVideoTourOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [cmsBranding, setCmsBranding] = useState<any>(SITE_CONTENT_DEFAULTS.branding);
   
   // Routing & Admin CMS Auth state
   const [isAdminRoute, setIsAdminRoute] = useState<boolean>(() => {
@@ -32,6 +35,18 @@ export default function App() {
   });
   const [currentUser, setCurrentUser] = useState<AdminUser | null>(null);
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+
+  useEffect(() => {
+    getSiteContent('branding').then(setCmsBranding).catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    const primary = /^#[0-9a-f]{6}$/i.test(cmsBranding.primaryColor || '') ? cmsBranding.primaryColor : '#d99a18';
+    const accent = /^#[0-9a-f]{6}$/i.test(cmsBranding.accentColor || '') ? cmsBranding.accentColor : '#0f2747';
+    document.documentElement.style.setProperty('--skm-primary', primary);
+    document.documentElement.style.setProperty('--skm-accent', accent);
+    if (cmsBranding.fontFamily) document.documentElement.style.setProperty('--skm-font', cmsBranding.fontFamily);
+  }, [cmsBranding]);
 
   // Initialize theme from system/localStorage
   useEffect(() => {
@@ -49,6 +64,36 @@ export default function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [theme]);
+
+  // Keep public pages synchronized with CMS edits made in another browser/session.
+  // Supabase Realtime broadcasts database changes; reload the public view so every
+  // section re-queries the authoritative published records (no stale component state).
+  useEffect(() => {
+    if (!supabase) return;
+    const cmsTables = [
+      'site_content', 'announcements', 'events', 'gallery', 'documents',
+      'staff', 'achievements', 'programs', 'facilities', 'milestones',
+      'faqs', 'settings'
+    ];
+    let refreshTimer: ReturnType<typeof setTimeout> | undefined;
+    const channel = supabase.channel('skm-public-cms-live');
+    cmsTables.forEach((table) => {
+      channel.on('postgres_changes', {
+        event: '*',
+        schema: 'public',
+        table,
+      }, () => {
+        if (window.location.pathname.startsWith('/admin') || window.location.hash.startsWith('#admin')) return;
+        if (refreshTimer) clearTimeout(refreshTimer);
+        refreshTimer = setTimeout(() => window.location.reload(), 450);
+      });
+    });
+    channel.subscribe();
+    return () => {
+      if (refreshTimer) clearTimeout(refreshTimer);
+      void supabase.removeChannel(channel);
+    };
+  }, []);
 
   // Check auth session on startup
   useEffect(() => {

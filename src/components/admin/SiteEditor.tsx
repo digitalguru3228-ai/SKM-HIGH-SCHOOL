@@ -11,9 +11,8 @@ import {
   Settings2,
 } from "lucide-react";
 import {
-  getSiteContent,
+  getAdminSiteContent,
   saveSiteContent,
-  SITE_CONTENT_DEFAULTS,
   SiteContentKey,
 } from "../../services/siteContent";
 
@@ -115,6 +114,29 @@ const groups: {
       { key: "fontFamily", label: "Font family" },
     ],
   },
+  {
+    key: "legacy",
+    title: "School Legacy Section",
+    description: "Edit the heritage timeline introduction shown on the public homepage.",
+    icon: Globe,
+    fields: [
+      { key: "badge", label: "Section badge" },
+      { key: "title", label: "Section title" },
+      { key: "description", label: "Section description", multiline: true },
+    ],
+  },
+  {
+    key: "mission",
+    title: "Mission & Core Values",
+    description: "Edit the mission section and its three value pillars. Keep pillars JSON valid.",
+    icon: Settings2,
+    fields: [
+      { key: "badge", label: "Section badge" },
+      { key: "title", label: "Section title" },
+      { key: "description", label: "Section description", multiline: true },
+      { key: "pillarsJson", label: "Three pillars (JSON)", multiline: true, placeholder: "Edit the three pillar objects carefully." },
+    ],
+  },
 ];
 
 export const SiteEditor: React.FC<{
@@ -132,14 +154,17 @@ export const SiteEditor: React.FC<{
   useEffect(() => {
     let live = true;
     setLoading(true);
-    getSiteContent(selected)
-      .then((data) => {
+    getAdminSiteContent(selected)
+      .then(({ content, is_published }) => {
         if (live) {
-          const next = { ...data };
+          const next = { ...content };
+          setPublished(is_published);
           if (selected === "header")
-            next.linksText = (data.links || [])
+            next.linksText = (content.links || [])
               .map((l: any) => `${l.name} | ${l.href}`)
               .join("\n");
+          if (selected === "mission")
+            next.pillarsJson = JSON.stringify(content.pillars || [], null, 2);
           setValues(next);
         }
       })
@@ -154,17 +179,28 @@ export const SiteEditor: React.FC<{
     setSaving(true);
     try {
       const next = { ...values };
+      if (selected === "mission" && typeof next.pillarsJson === "string") {
+        try { next.pillars = JSON.parse(next.pillarsJson); }
+        catch { throw new Error("Mission pillars must be valid JSON."); }
+        if (!Array.isArray(next.pillars) || next.pillars.length !== 3) {
+          throw new Error("Mission section must contain exactly three pillars.");
+        }
+        delete next.pillarsJson;
+      }
       if (selected === "header" && typeof next.linksText === "string") {
         next.links = next.linksText
           .split("\n")
           .map((line: string) => line.split("|"))
           .filter((p: string[]) => p.length >= 2 && p[0].trim() && p[1].trim())
-          .map((p: string[]) => ({
-            name: p[0].trim(),
-            href: p[1].trim(),
-            id: p[1].trim().replace(/^#/, ""),
-            visible: true,
-          }));
+          .map((p: string[]) => {
+            const href = p[1].trim();
+            return {
+              name: p[0].trim(),
+              href,
+              id: href.startsWith("#") ? href.slice(1) : "",
+              visible: true,
+            };
+          });
         delete next.linksText;
       }
       await saveSiteContent(selected, next, published);

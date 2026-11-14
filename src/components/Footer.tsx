@@ -28,7 +28,11 @@ export const Footer: React.FC<FooterProps> = ({
 }) => {
   const isDark = theme === 'dark';
   const [cmsFooter, setCmsFooter] = React.useState<any>(SITE_CONTENT_DEFAULTS.footer);
-  React.useEffect(() => { getSiteContent('footer').then(setCmsFooter).catch(() => {}); }, []);
+  const [cmsContact, setCmsContact] = React.useState<any>(SITE_CONTENT_DEFAULTS.contact);
+  React.useEffect(() => {
+    getSiteContent('footer').then(setCmsFooter).catch(() => {});
+    getSiteContent('contact').then(setCmsContact).catch(() => {});
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -179,17 +183,17 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-2.5 text-xs text-slate-300">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                <span>{SCHOOL_INFO.plusCode}</span>
+                <span>{cmsContact.address || SCHOOL_INFO.location}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <a href={`tel:${SCHOOL_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-white font-semibold">
-                  {SCHOOL_INFO.phone}
+                <a href={`tel:${(cmsContact.phone || SCHOOL_INFO.phone).replace(/\s+/g, '')}`} className="hover:text-white font-semibold">
+                  {cmsContact.phone || SCHOOL_INFO.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span className="text-amber-300/90 truncate">{SCHOOL_INFO.email}</span>
+                <span className="text-amber-300/90 truncate">{cmsContact.email || SCHOOL_INFO.email}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="w-3.5 h-3.5 text-amber-400 shrink-0" />

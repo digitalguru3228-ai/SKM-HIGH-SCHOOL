@@ -17,15 +17,19 @@ import {
 } from 'lucide-react';
 import { TIMELINE_MILESTONES } from '../data/schoolData';
 import { api, ApiMilestone } from '../services/api';
+import { getSiteContent, SITE_CONTENT_DEFAULTS } from '../services/siteContent';
 
 interface LegacyTimelineProps {
   theme?: 'light' | 'dark';
 }
 
 export const LegacyTimeline: React.FC<LegacyTimelineProps> = ({ theme = 'dark' }) => {
+  const [cmsLegacy, setCmsLegacy] = useState<any>(SITE_CONTENT_DEFAULTS.legacy);
   const [milestones, setMilestones] = useState<any[]>(TIMELINE_MILESTONES);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [expandedId, setExpandedId] = useState<string | null>('m1');
+
+  useEffect(() => { getSiteContent('legacy').then(setCmsLegacy).catch(() => {}); }, []);
 
   useEffect(() => {
     api.getPublicMilestones()
@@ -82,13 +86,13 @@ export const LegacyTimeline: React.FC<LegacyTimelineProps> = ({ theme = 'dark' }
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
             <History className="w-3.5 h-3.5" />
-            <span>Institutional Heritage & Legacy</span>
+            <span>{cmsLegacy.badge || "Institutional Heritage & Legacy"}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white">
-            Seven Decades of Educational Transformation
+            {cmsLegacy.title || "Seven Decades of Educational Transformation"}
           </h2>
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-            From humble classes in a patron’s home in 1956 to a premier modern multi-stream secondary institution in Kanodar, Gujarat.
+            {cmsLegacy.description || "From humble classes in a patron’s home in 1956 to a premier modern multi-stream secondary institution in Kanodar, Gujarat."}
           </p>
 
           {/* Interactive Filter Pills */}

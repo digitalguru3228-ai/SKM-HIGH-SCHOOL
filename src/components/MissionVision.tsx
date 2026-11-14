@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getSiteContent, SITE_CONTENT_DEFAULTS } from '../services/siteContent';
 import { Globe, Heart, Compass, Sparkles, Check, Target, Users, Shield } from 'lucide-react';
 
 interface MissionVisionProps {
@@ -6,6 +7,8 @@ interface MissionVisionProps {
 }
 
 export const MissionVision: React.FC<MissionVisionProps> = ({ theme = 'dark' }) => {
+  const [cmsMission, setCmsMission] = useState<any>(SITE_CONTENT_DEFAULTS.mission);
+  useEffect(() => { getSiteContent('mission').then(setCmsMission).catch(() => {}); }, []);
   const pillars = [
     {
       id: 'global-readiness',
@@ -49,7 +52,10 @@ export const MissionVision: React.FC<MissionVisionProps> = ({ theme = 'dark' }) 
       accentColor: 'from-amber-400 to-amber-500',
       tag: 'Pillar 03'
     }
-  ];
+  ].map((pillar, index) => ({
+    ...pillar,
+    ...(cmsMission.pillars?.[index] || {}),
+  }));
 
   const isDark = theme === 'dark';
 
@@ -69,13 +75,13 @@ export const MissionVision: React.FC<MissionVisionProps> = ({ theme = 'dark' }) 
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-500 dark:text-amber-300 text-xs font-semibold uppercase tracking-wider mb-3">
             <Target className="w-3.5 h-3.5" />
-            <span>Ethos & Three Pillars</span>
+            <span>{cmsMission.badge || "Ethos & Three Pillars"}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Our Mission & Core Values
+            {cmsMission.title || "Our Mission & Core Values"}
           </h2>
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
-            Nurturing young minds through balanced intellectual rigor, community service, gender equity, and lifelong self-reliance.
+            {cmsMission.description || "Nurturing young minds through balanced intellectual rigor, community service, gender equity, and lifelong self-reliance."}
           </p>
         </div>
 

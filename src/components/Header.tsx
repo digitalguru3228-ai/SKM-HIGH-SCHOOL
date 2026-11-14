@@ -24,6 +24,19 @@ interface HeaderProps {
   onOpenTour: () => void;
 }
 
+type NavLink = {
+  id: string;
+  name: string;
+  href: string;
+  visible?: boolean;
+};
+
+type HeaderContent = {
+  schoolName?: string;
+  subtitle?: string;
+  links?: NavLink[];
+};
+
 export const Header: React.FC<HeaderProps> = ({ 
   theme,
   onToggleTheme,
@@ -33,9 +46,9 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [cmsHeader, setCmsHeader] = useState<any>(SITE_CONTENT_DEFAULTS.header);
+  const [cmsHeader, setCmsHeader] = useState<HeaderContent>(SITE_CONTENT_DEFAULTS.header);
 
-  useEffect(() => { getSiteContent('header').then(setCmsHeader).catch(() => {}); }, []);
+  useEffect(() => { getSiteContent('header').then((content) => setCmsHeader(content as HeaderContent)).catch(() => {}); }, []);
 
   const isDark = theme === 'dark';
 
@@ -84,7 +97,9 @@ export const Header: React.FC<HeaderProps> = ({
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = (cmsHeader.links || SITE_CONTENT_DEFAULTS.header.links).filter((link: any) => link.visible !== false);
+  const navLinks: NavLink[] = (cmsHeader.links || SITE_CONTENT_DEFAULTS.header.links).filter(
+    (link: NavLink) => link.visible !== false
+  );
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
