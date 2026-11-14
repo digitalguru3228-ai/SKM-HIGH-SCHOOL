@@ -137,14 +137,14 @@ export const AnnouncementsSection: React.FC<AnnouncementsSectionProps> = ({ them
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3.5 sm:gap-4">
             
             {/* Category Pills */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 md:pb-0 scrollbar-none snap-x">
+            <div className="flex w-full min-w-0 items-center gap-2 overflow-x-auto overflow-y-hidden pb-2 md:pb-0 scrollbar-none snap-x flex-nowrap">
               {categories.map((cat) => {
                 const isActive = selectedCategory === cat;
                 return (
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`touch-target px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer snap-start active:scale-95 ${
+                    className={`touch-target shrink-0 px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap leading-none transition-all cursor-pointer snap-start active:scale-95 ${
                       isActive
                         ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 font-extrabold'
                         : isDark
@@ -159,7 +159,7 @@ export const AnnouncementsSection: React.FC<AnnouncementsSectionProps> = ({ them
             </div>
 
             {/* Search Input Box */}
-            <div className="relative min-w-[240px] sm:min-w-[280px]">
+            <div className="relative w-full min-w-0 md:w-auto md:min-w-[280px] md:flex-1 md:max-w-md">
               <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
