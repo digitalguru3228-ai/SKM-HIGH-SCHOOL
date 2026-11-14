@@ -84,10 +84,16 @@ export const Header: React.FC<HeaderProps> = ({
     };
   }, [mobileMenuOpen]);
 
-  const navLinks: Array<{ id: string; href: string; name: string }> =
-    (cmsHeader.links || SITE_CONTENT_DEFAULTS.header.links).filter(
-      (link: { id: string; href: string; name: string; visible?: boolean }) => link.visible !== false
-    );
+  type NavLink = {
+    id: string;
+    href: string;
+    name: string;
+    visible?: boolean;
+  };
+
+  const navLinks: NavLink[] = ((cmsHeader.links || SITE_CONTENT_DEFAULTS.header.links) as NavLink[]).filter(
+    (link: NavLink) => link.visible !== false
+  );
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
