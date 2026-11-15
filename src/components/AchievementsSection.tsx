@@ -88,7 +88,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
   return (
     <section 
       id="achievements" 
-      className={`py-16 sm:py-24 relative transition-colors duration-300 ${
+      className={`py-16 pb-28 sm:py-24 sm:pb-24 relative transition-colors duration-300 ${
         isDark ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'
       }`}
     >
@@ -111,21 +111,21 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
         </div>
 
         {/* Top Highlight Stats Row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 min-[360px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-10 sm:mb-12">
           
           <div className={`interactive-card p-4 sm:p-5 rounded-2xl border text-left ${
             isDark ? 'bg-slate-950/80 border-slate-800' : 'bg-slate-50 border-slate-200 shadow-xs'
           }`}>
-            <div className="flex items-center gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold shrink-0">
                 <TrendingUp className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-amber-500 dark:text-amber-400 tabular-nums">98.4%</p>
-                <p className={`text-[11px] sm:text-xs font-bold ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>HSC Board Pass Rate</p>
+              <div className="min-w-0">
+                <p className="text-lg sm:text-2xl md:text-3xl font-extrabold text-amber-500 dark:text-amber-400 tabular-nums">98.4%</p>
+                <p className={`text-[11px] sm:text-xs font-bold leading-snug break-words ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>HSC Board Pass Rate</p>
               </div>
             </div>
-            <p className={`mt-2 text-[11px] sm:text-xs font-medium truncate ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+            <p className={`mt-2 text-[11px] sm:text-xs font-medium leading-snug line-clamp-2 break-words ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
               Top ranking center in Banaskantha
             </p>
           </div>
@@ -133,16 +133,16 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
           <div className={`interactive-card p-4 sm:p-5 rounded-2xl border text-left ${
             isDark ? 'bg-slate-950/80 border-slate-800' : 'bg-slate-50 border-slate-200 shadow-xs'
           }`}>
-            <div className="flex items-center gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-500 flex items-center justify-center font-bold shrink-0">
                 <Star className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-500 dark:text-blue-400 tabular-nums">99.85 PR</p>
-                <p className={`text-[11px] sm:text-xs font-bold ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>State Science Rank</p>
+              <div className="min-w-0">
+                <p className="text-lg sm:text-2xl md:text-3xl font-extrabold text-blue-500 dark:text-blue-400 tabular-nums">99.85 PR</p>
+                <p className={`text-[11px] sm:text-xs font-bold leading-snug break-words ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>State Science Rank</p>
               </div>
             </div>
-            <p className={`mt-2 text-[11px] sm:text-xs font-medium truncate ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+            <p className={`mt-2 text-[11px] sm:text-xs font-medium leading-snug line-clamp-2 break-words ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
               100/100 Physics & Maths scores
             </p>
           </div>
@@ -150,16 +150,16 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
           <div className={`interactive-card p-4 sm:p-5 rounded-2xl border text-left ${
             isDark ? 'bg-slate-950/80 border-slate-800' : 'bg-slate-50 border-slate-200 shadow-xs'
           }`}>
-            <div className="flex items-center gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-500 flex items-center justify-center font-bold shrink-0">
                 <Medal className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-emerald-500 dark:text-emerald-400 tabular-nums">14 Cadets</p>
-                <p className={`text-[11px] sm:text-xs font-bold ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Rajya Puraskar</p>
+              <div className="min-w-0">
+                <p className="text-lg sm:text-2xl md:text-3xl font-extrabold text-emerald-500 dark:text-emerald-400 tabular-nums">14 Cadets</p>
+                <p className={`text-[11px] sm:text-xs font-bold leading-snug break-words ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Rajya Puraskar</p>
               </div>
             </div>
-            <p className={`mt-2 text-[11px] sm:text-xs font-medium truncate ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+            <p className={`mt-2 text-[11px] sm:text-xs font-medium leading-snug line-clamp-2 break-words ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
               Governor felicitated Scouts & Guides
             </p>
           </div>
@@ -167,16 +167,16 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
           <div className={`interactive-card p-4 sm:p-5 rounded-2xl border text-left ${
             isDark ? 'bg-slate-950/80 border-slate-800' : 'bg-slate-50 border-slate-200 shadow-xs'
           }`}>
-            <div className="flex items-center gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-500 flex items-center justify-center font-bold shrink-0">
                 <Users className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-purple-500 dark:text-purple-400 tabular-nums">25,000+</p>
-                <p className={`text-[11px] sm:text-xs font-bold ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Global Alumni</p>
+              <div className="min-w-0">
+                <p className="text-lg sm:text-2xl md:text-3xl font-extrabold text-purple-500 dark:text-purple-400 tabular-nums">25,000+</p>
+                <p className={`text-[11px] sm:text-xs font-bold leading-snug break-words ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Global Alumni</p>
               </div>
             </div>
-            <p className={`mt-2 text-[11px] sm:text-xs font-medium truncate ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+            <p className={`mt-2 text-[11px] sm:text-xs font-medium leading-snug line-clamp-2 break-words ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
               Doctors, Engineers & Civil Leaders
             </p>
           </div>
@@ -184,14 +184,14 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center justify-center gap-2 overflow-x-auto pb-3 mb-8 scrollbar-none snap-x">
+        <div className="flex w-full items-center justify-start sm:justify-center gap-2 overflow-x-auto overflow-y-hidden pb-3 mb-8 scrollbar-none snap-x overscroll-x-contain px-1">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`touch-target px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer snap-start active:scale-95 ${
+                className={`touch-target shrink-0 flex-none px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer snap-start active:scale-95 ${
                   isActive
                     ? 'bg-amber-500 text-slate-950 font-extrabold shadow-md shadow-amber-500/20'
                     : isDark
@@ -219,10 +219,10 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
               >
                 <div>
                   {/* Top Badges */}
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-500 dark:text-amber-300 border border-amber-500/30">
+                  <div className="flex flex-wrap items-start justify-between gap-2 mb-4">
+                    <span className="inline-flex max-w-full items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-500 dark:text-amber-300 border border-amber-500/30">
                       {getCategoryIcon(item.category)}
-                      <span>{item.badge}</span>
+                      <span className="whitespace-normal break-words">{item.badge}</span>
                     </span>
                     <span className={`text-xs font-bold px-2 py-0.5 rounded font-mono ${
                       isDark ? 'bg-slate-900 text-slate-400' : 'bg-slate-100 text-slate-600'
@@ -239,14 +239,14 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
                   </h3>
 
                   {/* Awardee & Metric Pill */}
-                  <div className={`p-3 rounded-xl border mb-3 flex items-center justify-between ${
+                  <div className={`p-3 rounded-xl border mb-3 flex flex-wrap items-start justify-between gap-2 ${
                     isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-slate-50 border-slate-200'
                   }`}>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className={`text-[10px] uppercase font-bold tracking-wider ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                         Honoree / Batch:
                       </p>
-                      <p className={`text-xs font-bold ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
+                      <p className={`text-xs font-bold leading-snug break-words ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
                         {item.awardee}
                       </p>
                     </div>
@@ -264,7 +264,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ theme 
                 </div>
 
                 {/* Card Footer */}
-                <div className={`pt-3.5 mt-4 border-t flex items-center justify-between text-[11px] font-medium ${
+                <div className={`pt-3.5 mt-4 border-t flex flex-wrap items-center justify-between gap-2 text-[11px] font-medium ${
                   isDark ? 'border-slate-800 text-slate-400' : 'border-slate-100 text-slate-500'
                 }`}>
                   <span className="flex items-center gap-1">

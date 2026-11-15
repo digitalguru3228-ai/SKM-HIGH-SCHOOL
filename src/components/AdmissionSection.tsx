@@ -172,7 +172,7 @@ export const AdmissionSection: React.FC<AdmissionSectionProps> = ({ theme = 'dar
               </ul>
             </div>
 
-            {/* Scholarship Note */}
+            {/* Scholarship Note 
             <div className={`p-5 sm:p-6 rounded-3xl border shadow-xl ${
               isDark 
                 ? 'bg-gradient-to-br from-slate-950 to-amber-950/40 border-amber-500/20' 
@@ -194,7 +194,7 @@ export const AdmissionSection: React.FC<AdmissionSectionProps> = ({ theme = 'dar
                   View Scholarship Circulars &rarr;
                 </button>
               </div>
-            </div>
+            </div>*/}
 
           </div>
 
@@ -354,7 +354,7 @@ export const AdmissionSection: React.FC<AdmissionSectionProps> = ({ theme = 'dar
                         <option value="12-science">Class 12 Science (Higher Secondary)</option>
                         <option value="11-commerce">Class 11 General / Commerce Stream</option>
                         <option value="12-commerce">Class 12 General / Commerce Stream</option>
-                        <option value="secondary-8-10">Secondary Section (Class 8th to 10th)</option>
+                        <option value="secondary-8-10">Secondary Section (Class 9th to 10th)</option>
                         <option value="vocational">Vocational & Technical Certificate Courses</option>
                       </select>
                     </div>
@@ -455,7 +455,7 @@ export const AdmissionSection: React.FC<AdmissionSectionProps> = ({ theme = 'dar
                     </div>
                   </div>
 
-                  {/* Scholarship Request Checkbox */}
+                  {/* Scholarship Request Checkbox 
                   <div className={`p-3.5 rounded-xl border flex items-start gap-3 ${
                     isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-slate-50 border-slate-200'
                   }`}>
@@ -474,7 +474,7 @@ export const AdmissionSection: React.FC<AdmissionSectionProps> = ({ theme = 'dar
                         Check if eligible for Dawoodi Bohra Welfare Trust or Sarvoday Kelavani Mandal financial assistance.
                       </p>
                     </label>
-                  </div>
+                  </div>*/}
 
                   {/* Submit Button */}
                   <button
