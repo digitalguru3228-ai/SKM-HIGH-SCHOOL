@@ -83,7 +83,7 @@ export const AcademicsSection: React.FC<AcademicsSectionProps> = ({
             <GraduationCap className="w-3.5 h-3.5" />
             <span>Curriculum & Streams</span>
           </div>
-          <CmsHeading field="academicsTitle" fallback="Academic Programs & Streams" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white" />
+          <CmsHeading field="academicsTitle" fallback="Academic Programs & Streams" className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}" />
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
             State board accredited GSEB curriculum blended with modern laboratory practicals, computer coding, and hands-on vocational workshops.
           </p>

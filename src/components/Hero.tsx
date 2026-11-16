@@ -220,7 +220,7 @@ export const Hero: React.FC<HeroProps> = ({
                         {settings?.school_name || 'SKM High School, Kanodar'}
                       </p>
                     </div>
-                    <span className="text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold flex items-center gap-1">
+                    <span className="text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-black-300 border border-emerald-500/30 font-semibold flex items-center gap-1">
                       <ShieldCheck className="w-3.5 h-3.5" />
                       GSEB Center
                     </span>
@@ -238,10 +238,15 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="w-11 h-11 rounded-xl bg-amber-500/20 flex items-center justify-center border border-amber-500/30 shrink-0">
                 <Award className="w-6 h-6 text-amber-500" />
               </div>
-              <div className="text-left">
-                <p className="text-base font-extrabold leading-tight text-slate-900 dark:text-white tabular-nums">70+ Years</p>
-                <p className={`text-xs font-semibold ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>Academic Excellence in Kanodar</p>
-              </div>
+             <div className="text-left">
+  <p className={`text-base font-extrabold leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+    70+ Years
+  </p>
+  <p className={`text-xs font-semibold ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+    Academic Excellence in Kanodar
+  </p>
+</div>
+
             </div>
 
             {/* Floating Stat Card 2: 100% Board Center with smooth subtle float */}
@@ -254,7 +259,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <Building2 className="w-6 h-6 text-blue-500" />
               </div>
               <div className="text-left">
-                <p className="text-base font-extrabold leading-tight text-slate-900 dark:text-white">Board Exam Center</p>
+                <p className="text-base font-extrabold leading-tight ${isDark ? 'text-white' : 'text-slate-900'}">Board Exam Center</p>
                 <p className={`text-xs font-semibold ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>Regional GSEB Assessment Hub</p>
               </div>
             </div>

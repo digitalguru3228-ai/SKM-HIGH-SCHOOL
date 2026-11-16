@@ -88,7 +88,7 @@ export const LegacyTimeline: React.FC<LegacyTimelineProps> = ({ theme = 'dark' }
             <History className="w-3.5 h-3.5" />
             <span>{cmsLegacy.badge || "Institutional Heritage & Legacy"}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}">
             {cmsLegacy.title || "Seven Decades of Educational Transformation"}
           </h2>
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>

@@ -128,7 +128,7 @@ export const MissionVision: React.FC<MissionVisionProps> = ({ theme = 'dark' }) 
                 {/* Key Bullet Points */}
                 <div className={`pt-4 border-t ${isDark ? 'border-slate-800' : 'border-slate-100'}`}>
                   <ul className="space-y-2.5">
-                    {pillar.points.map((point, idx) => (
+                    {pillar.points.map((point: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined, idx: React.Key | null | undefined) => (
                       <li key={idx} className={`flex items-start gap-2 text-xs leading-normal ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
                         <Check className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
                         <span>{point}</span>
